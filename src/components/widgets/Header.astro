@@ -5,8 +5,9 @@ import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
 
-import { getHomePermalink } from '~/utils/permalinks';
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
+import { SITE } from 'astrowind:config';
 import type { CallToAction } from '~/types';
 
 interface Link {
@@ -46,12 +47,22 @@ const {
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
-const isTrPage = currentPath === '/tr' || currentPath.startsWith('/tr/');
-const langTogglePath = isTrPage
-  ? currentPath.replace(/^\/tr(\/.*)?$/, (_m, rest) => rest || '/')
-  : currentPath === '/'
+// Strip the site's base path (e.g. `/mia-consultancy` on GitHub Pages) before
+// reasoning about `/tr` prefixes, then use getPermalink to add it back — the
+// same base-aware helper every other link on the site already goes through.
+const basePrefix = `/${trimSlash(SITE.base || '/')}`;
+const relPath =
+  basePrefix !== '/' && (currentPath === basePrefix || currentPath.startsWith(`${basePrefix}/`))
+    ? currentPath.slice(basePrefix.length) || '/'
+    : currentPath;
+
+const isTrPage = relPath === '/tr' || relPath.startsWith('/tr/');
+const targetRelPath = isTrPage
+  ? relPath.replace(/^\/tr(\/.*)?$/, (_m, rest) => rest || '/')
+  : relPath === '/'
     ? '/tr'
-    : `/tr${currentPath}`;
+    : `/tr${relPath}`;
+const langTogglePath = getPermalink(targetRelPath);
 const langToggleLabel = isTrPage ? 'EN' : 'TR';
 ---
 
@@ -304,16 +315,26 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
     private updateLangToggle() {
       const el = this.querySelector<HTMLAnchorElement>('[data-aw-lang-toggle]');
       if (!el) return;
-      const path = window.location.pathname.replace(/\/+$/, '') || '/';
+
+      // Vite replaces `import.meta.env.BASE_URL` at build time with the
+      // configured `base` (e.g. `/mia-consultancy/` on GitHub Pages, `/` locally).
+      const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+      let path = window.location.pathname.replace(/\/+$/, '') || '/';
+      if (base && (path === base || path.startsWith(`${base}/`))) {
+        path = path.slice(base.length) || '/';
+      }
+
       const isTr = path === '/tr' || path.startsWith('/tr/');
+      let targetPath: string;
       if (isTr) {
         const rest = path.slice(3);
-        el.href = rest === '' ? '/' : rest;
+        targetPath = rest === '' ? '/' : rest;
         el.textContent = 'EN';
       } else {
-        el.href = path === '/' ? '/tr' : `/tr${path}`;
+        targetPath = path === '/' ? '/tr' : `/tr${path}`;
         el.textContent = 'TR';
       }
+      el.href = targetPath === '/' ? base || '/' : base + targetPath;
     }
   }
 
