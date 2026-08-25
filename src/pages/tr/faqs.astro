@@ -1,0 +1,109 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'SSS',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="SSS"
+    title="Sıkça sorulan sorular"
+    subtitle="Görüşme talep eden müşterilerimizin en sık sorduğu soruların yanıtları."
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    tagline="Çalışma Süreci"
+    title="Bizimle Çalışmak"
+    columns={2}
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Ne büyüklükte şirketlerle çalışıyorsunuz?',
+        description:
+          'Büyüyen ve orta ölçekli kurumlarla, ayrıca çeşitli sektörlerdeki büyük şirketlerin bölümleriyle çalışıyoruz.',
+      },
+      {
+        title: 'Tipik bir çalışma ne kadar sürer?',
+        description:
+          'Kapsamına bağlıdır. Odaklı bir teşhis çalışması birkaç hafta sürebilirken, stratejiden uygulamaya uzanan kapsamlı bir çalışma genellikle birkaç ay sürer. Başlamadan önce zaman çizelgesini birlikte belirleriz.',
+      },
+      {
+        title: 'Sadece danışmanlık mı yapıyorsunuz, yoksa uygulamaya da yardımcı oluyor musunuz?',
+        description:
+          'İkisini de yapıyoruz. Planı sizinle birlikte oluşturuyoruz ve planın gerçekten hayata geçmesi için uygulama sürecinde ekibinizle birlikte çalışmaya devam edebiliyoruz.',
+      },
+      {
+        title: 'Sizinle sabit bir anlaşma yerine tek bir proje için çalışabilir miyiz?',
+        description:
+          'Evet. Çalışmalarımızın çoğu, net biçimde tanımlanmış kapsam ve çıktılarla proje bazlı olarak başlar. Birbirimizi tanıdıktan sonra sürekli danışmanlık anlaşmaları da mümkündür.',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    tagline="Süreç ve Gizlilik"
+    title="Nasıl Çalışıyoruz"
+    columns={2}
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Bilgilerimizin gizliliğini nasıl koruyorsunuz?',
+        description:
+          'Tüm çalışmalar karşılıklı bir gizlilik sözleşmesiyle başlar. Müşteri bilgileri yalnızca çalışmanızda görevlendirilen danışmanlarla paylaşılır.',
+      },
+      {
+        title: 'Projemizde fiilen kim çalışacak?',
+        description:
+          "Her çalışmaya kıdemli bir danışman liderlik eder ve başlangıçtan teslime kadar sürecin içinde kalır — sizi junior bir ekibe devretmeyiz.",
+      },
+      {
+        title: 'Başarıyı nasıl ölçüyorsunuz?',
+        description:
+          'Her çalışmanın başında somut, ölçülebilir sonuçlar üzerinde anlaşır ve süreç boyunca — sadece sonunda değil — bunlara göre raporlama yaparız.',
+      },
+      {
+        title: 'Nasıl başlarız?',
+        description:
+          'İletişim sayfamız üzerinden bize ulaşın. Bir kapsam önermeden önce ihtiyacınızı anlamak için ilk bir görüşme ayarlayacağız.',
+        callToAction: {
+          text: 'Bize ulaşın',
+          href: '/tr/contact',
+          icon: 'tabler:chevron-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Bize her şeyi sorun',
+        href: '/tr/contact',
+      },
+    ]}
+    title="Hâlâ sorularınız mı var?"
+    subtitle="Kendi durumunuzu konuşmaktan memnuniyet duyarız."
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

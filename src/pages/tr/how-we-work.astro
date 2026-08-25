@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Nasıl Çalışırız',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Nasıl Çalışırız" title="Nasıl çalışırız" />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    columns={2}
+    items={[
+      {
+        title: 'Tasarlamadan Önce Anlarız',
+        description:
+          'Her iş birliği varsayımlarla değil, anlayışla başlar. Çözüm önermeden önce, kurumunuzun veya kişisel yolculuğunuzun kendine özgü zorluklarını, güçlü yönlerini ve geçiş noktalarını inceleriz. Çünkü etkili çözümler şablonlar üzerine değil, bağlam üzerine kurulur.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Kritik Geçişlere Odaklanırız',
+        description:
+          'İnsanlar nadiren her zaman zorlanır; asıl zorlandıkları an değişimin kilit anlarıdır. Profesyonel hayata adım atmak, liderliğe geçmek, yeni bir ortama uyum sağlamak, aksilikten toparlanmak ya da elit performansa ilerlemek gibi. Desteğimizi en büyük etkiyi yaratacağı noktalara odaklarız.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Kapasiteyi İçeriden İnşa Ederiz',
+        description:
+          'Kalıcı değişim, günlük deneyimleri şekillendiren insanlar aracılığıyla gerçekleşir. Çalışmamız sona erdikten uzun süre sonra da devam edecek sürdürülebilir uygulamalar geliştirmek için liderler, yöneticiler, koçlar, eğitimciler ve ekiplerle birlikte çalışırız.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Güveni Koruruz',
+        description:
+          'Psikolojik destek hiçbir zaman bir performans değerlendirme aracına dönüşmemelidir. Kişisel bilgilerin gizli kalmasını ve iyi oluşun her zaman değerlendirme ile karar alma süreçlerinden ayrı tutulmasını sağlayan net etik sınırlar koruruz.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Önemli Olanı Ölçeriz',
+        description:
+          'Her müdahale kanıtlarla yönlendirilir ve anlamlı sonuçlar üzerinden değerlendirilir. Ölçülebilir ve sürdürülebilir bir etki sağlamak için net hedefler belirler, ilerlemeyi izler ve yaklaşımımızı sürekli olarak geliştiririz.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Konuşmaya başlayın',
+        href: '/tr/contact',
+      },
+    ]}
+    title="Birlikte çalışmaya hazır mısınız?"
+    subtitle="Her çalışma, nereye doğru ilerlediğiniz üzerine bir konuşmayla başlar."
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

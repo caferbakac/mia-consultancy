@@ -1,0 +1,83 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'İletişim',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="İletişim" title="İhtiyacınızı konuşalım" />
+
+  <ContactUs
+    id="form"
+    title="Üzerinde çalıştığınız konuyu bize anlatın"
+    subtitle="Kurumunuz ve karşılaştığınız zorluk hakkında birkaç detay paylaşın; sizinle bir tanışma görüşmesi planlamak için geri döneceğiz."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Ad Soyad',
+        required: true,
+      },
+      {
+        type: 'text',
+        name: 'company',
+        label: 'Şirket',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'E-posta',
+        required: true,
+      },
+    ]}
+    textarea={{
+      label: 'Size nasıl yardımcı olabiliriz?',
+      required: true,
+    }}
+    disclaimer={{
+      label:
+        'Bu formu göndererek, kişisel bilgilerinizin Gizlilik Politikamıza uygun şekilde toplanmasını kabul etmiş olursunuz.',
+    }}
+    description="Genellikle bir iş günü içinde yanıt veriyoruz."
+    mailto="sercan.erbecer@outlook.com"
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Bize Ulaşmanın Diğer Yolları"
+    columns={3}
+    items={[
+      {
+        title: 'E-posta',
+        description: 'hello@miaconsultancy.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Telefon',
+        description: '+90 (000) 000 00 00',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Ofis',
+        description: 'Ofis adresinizi buraya ekleyin',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

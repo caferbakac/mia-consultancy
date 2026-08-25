@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Mia Consultancy — Bridging Potential with Purpose',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Mia Consultancy"
+    actions={[
+      { variant: 'primary', text: 'Explore our expertise', href: '/expertise' },
+      { text: 'Talk to us', href: '/contact' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Consulting team collaborating in a meeting room',
+    }}
+  >
+    <Fragment slot="title">Bridging potential with purpose.</Fragment>
+
+    <Fragment slot="subtitle">
+      From elite sport to organizations, we design evidence-based psychological and organisational solutions that
+      empower young professionals and strengthen the organisations they join. Because every transition deserves more
+      than advice: it deserves a strategy.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** — About us ****** -->
+
+  <Content
+    id="about"
+    isReversed
+    tagline="About us"
+    title="Who we are"
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Mia Consultancy team working together',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        We came to this from different backgrounds: psychology, sport, statistics, teaching, and a good deal of
+        ordinary life. What we had in common was the experience of watching good systems fail people quietly, and of
+        being inside those systems while it happened. So we did what our training tells us to do with something that
+        keeps repeating: we treated it as a problem worth studying rather than a run of bad luck.
+      </p>
+      <p class="mb-4">
+        A boy who joins an academy at ten and is told at nineteen that he is finished. A graduate who leaves a job
+        within the first year and cannot quite say why. And the other side of the same story, a club that loses a
+        player it spent a decade developing, or a manager who concludes that this generation simply does not want to
+        work. Different worlds, same shape: a system that is excellent at its technical task and unpractised at the
+        human one, and a handful of transition points that belong to nobody's job description.
+      </p>
+      <p class="mb-4">
+        That is the layer we work on. We are academics, psychologists, therapists and statisticians, which means we
+        argue with each other productively and we do not take a claim seriously until someone has tried to measure
+        it.
+      </p>
+      <p>
+        We are also clear about what we are not: we are not coaches, we are not an HR department, and we do not
+        provide therapy inside the organisations we advise. When someone needs that support, our role is to design
+        and build the route to it.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** — Where we are ****** -->
+
+  <Content
+    isAfterContent
+    tagline="Where we work"
+    title="Where we are"
+    image={{
+      src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Team mapping out a plan on a whiteboard',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        People move through life-changing transitions every day. A young athlete enters an elite academy. A graduate
+        takes their first step into professional life. An organisation welcomes a new generation of employees with
+        different expectations, values, and ways of working.
+      </p>
+      <p class="mb-4">
+        Most systems are built to achieve technical excellence, yet few are designed for the human experience of
+        change. People are recruited, trained, promoted, and evaluated, but the moments where confidence, identity,
+        motivation, and belonging are shaped are often left to chance.
+      </p>
+      <p class="mb-4">That is where we work.</p>
+      <p>
+        We design evidence-based psychological and organisational solutions that help individuals thrive and
+        organisations build environments where people can grow, perform, and belong. Every programme is tailored to
+        the unique needs of the people and institutions we work with.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Features Widget *************** — Core Components ****** -->
+
+  <Features
+    tagline="Core components"
+    title="Where we make the difference"
+    columns={3}
+    items={[
+      {
+        title: 'Elite Sport',
+        description:
+          'Supporting athletes, academies, coaches, and families through the psychological demands of development, performance, injury, and the transition to professional sport.',
+        icon: 'tabler:ball-football',
+      },
+      {
+        title: 'Organisations',
+        description:
+          'Helping organisations attract, integrate, and retain the next generation of professionals through evidence-based onboarding, leadership development, wellbeing, and organisational culture.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Humanitarian & Social Impact',
+        description:
+          'Designing, implementing, and evaluating mental health, psychosocial support, and child protection programmes for organisations operating in complex and humanitarian contexts.',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Explore our expertise',
+        href: '/expertise',
+      },
+    ]}
+    title="Every transition deserves more than advice."
+    subtitle="It deserves a strategy. See how we work with athletes, organisations, and humanitarian teams."
+  />
+</Layout>

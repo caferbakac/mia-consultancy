@@ -1,0 +1,157 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Mia Consultancy — Potansiyeli Amaçla Buluşturuyoruz',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline='<span lang="en">Mia Consultancy</span>'
+    actions={[
+      { variant: 'primary', text: 'Uzmanlığımızı keşfedin', href: '/tr/expertise' },
+      { text: 'Bizimle konuşun', href: '/tr/contact' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bir toplantı odasında birlikte çalışan danışmanlık ekibi',
+    }}
+  >
+    <Fragment slot="title">Potansiyeli amaçla buluşturuyoruz.</Fragment>
+
+    <Fragment slot="subtitle">
+      Elit spordan kurumlara, genç profesyonelleri güçlendiren ve katıldıkları kurumları destekleyen kanıta dayalı
+      psikolojik ve kurumsal çözümler tasarlıyoruz. Çünkü her geçiş dönemi sadece tavsiyeyi değil, bir stratejiyi hak
+      eder.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** — Biz kimiz ****** -->
+
+  <Content
+    id="about"
+    isReversed
+    tagline="Hakkımızda"
+    title="Biz kimiz"
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Mia Consultancy ekibi birlikte çalışıyor',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Buraya farklı geçmişlerden geldik: psikoloji, spor, istatistik, eğitim ve bolca sıradan hayat deneyimi. Ortak
+        noktamız, iyi işleyen sistemlerin insanları sessizce hayal kırıklığına uğratışını izlemiş olmak ve bu
+        yaşanırken o sistemlerin içinde bulunmuş olmaktı. Bu yüzden eğitimimizin bize öğrettiği şeyi yaptık: tekrar
+        eden bir durumu kötü şans olarak değil, üzerinde çalışılması gereken bir problem olarak ele aldık.
+      </p>
+      <p class="mb-4">
+        On yaşında bir akademiye katılan ve on dokuz yaşında artık yetmediği söylenen bir çocuk. İlk yılını
+        doldurmadan işten ayrılan ve nedenini tam olarak açıklayamayan bir mezun. Aynı hikayenin diğer tarafında ise,
+        on yıl emek verdiği bir oyuncuyu kaybeden bir kulüp ya da bu neslin çalışmak istemediği sonucuna varan bir
+        yönetici var. Farklı dünyalar, aynı örüntü: teknik görevinde mükemmel ama insani boyutta deneyimsiz bir
+        sistem ve kimsenin iş tanımına girmeyen birkaç kritik geçiş noktası.
+      </p>
+      <p class="mb-4">
+        Biz de tam bu katmanda çalışıyoruz. Akademisyenler, psikologlar, terapistler ve istatistikçileriz; bu da
+        birbirimizle üretken şekilde tartıştığımız ve biri ölçmeyi denemeden hiçbir iddiayı ciddiye almadığımız
+        anlamına gelir.
+      </p>
+      <p>
+        Ne olmadığımız konusunda da netiz: koç değiliz, İK departmanı değiliz ve danışmanlık verdiğimiz kurumların
+        içinde terapi hizmeti sunmuyoruz. Birinin bu desteğe ihtiyacı olduğunda, bizim rolümüz oraya giden yolu
+        tasarlamak ve inşa etmektir.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** — Nerede duruyoruz ****** -->
+
+  <Content
+    isAfterContent
+    tagline="Çalışma Alanımız"
+    title="Nerede duruyoruz"
+    image={{
+      src: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bir ekip beyaz tahtada plan hazırlıyor',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        İnsanlar her gün hayatlarını değiştiren geçiş dönemlerinden geçiyor. Genç bir sporcu elit bir akademiye
+        katılıyor. Bir mezun profesyonel hayata ilk adımını atıyor. Bir kurum, farklı beklentileri, değerleri ve
+        çalışma biçimleri olan yeni bir nesli bünyesine katıyor.
+      </p>
+      <p class="mb-4">
+        Sistemlerin çoğu teknik mükemmelliği hedefleyerek kurulur, ancak çok azı değişimin insani deneyimi için
+        tasarlanır. İnsanlar işe alınır, eğitilir, terfi ettirilir ve değerlendirilir; ama özgüvenin, kimliğin,
+        motivasyonun ve aidiyetin şekillendiği anlar genellikle şansa bırakılır.
+      </p>
+      <p class="mb-4">İşte biz burada çalışıyoruz.</p>
+      <p>
+        Bireylerin gelişmesine yardımcı olan ve kurumların insanların büyüyebileceği, performans gösterebileceği ve
+        aidiyet hissedebileceği ortamlar kurmasını sağlayan, kanıta dayalı psikolojik ve kurumsal çözümler
+        tasarlıyoruz. Her program, birlikte çalıştığımız insanların ve kurumların kendine özgü ihtiyaçlarına göre
+        uyarlanır.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Features Widget *************** — Temel Bileşenler ****** -->
+
+  <Features
+    tagline="Temel Bileşenler"
+    title="Fark Yarattığımız Alanlar"
+    columns={3}
+    items={[
+      {
+        title: 'Elit Spor',
+        description:
+          'Sporcuları, akademileri, koçları ve aileleri; gelişim, performans, sakatlık ve profesyonel spora geçiş süreçlerinin psikolojik gereksinimleri konusunda destekliyoruz.',
+        icon: 'tabler:ball-football',
+      },
+      {
+        title: 'Kurumlar',
+        description:
+          'Kurumların; kanıta dayalı işe alım süreçleri, liderlik gelişimi, çalışan iyi oluşu ve kurum kültürü aracılığıyla yeni nesil profesyonelleri çekmesine, sisteme entegre etmesine ve elde tutmasına yardımcı oluyoruz.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'İnsani Yardım ve Sosyal Etki',
+        description:
+          'Karmaşık ve insani bağlamlarda faaliyet gösteren kurumlar için ruh sağlığı, psikososyal destek ve çocuk koruma programları tasarlıyor, uyguluyor ve değerlendiriyoruz.',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Uzmanlığımızı keşfedin',
+        href: '/tr/expertise',
+      },
+    ]}
+    title="Her geçiş dönemi, tavsiyeden fazlasını hak eder."
+    subtitle="Bir stratejiyi hak eder. Sporcular, kurumlar ve insani yardım ekipleriyle nasıl çalıştığımızı keşfedin."
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

@@ -1,0 +1,68 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'How We Work',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="How We Work" title="How we work" />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    columns={2}
+    items={[
+      {
+        title: 'Understand Before We Design',
+        description:
+          'Every partnership begins with understanding, not assumptions. Before recommending solutions, we explore the unique challenges, strengths, and transition points within your organisation or personal journey. Because effective solutions are built on context, not templates.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Focus on Critical Transitions',
+        description:
+          'People rarely struggle all the time, they struggle at key moments of change. Entering professional life, moving into leadership, adapting to a new environment, recovering from setbacks, or progressing to elite performance. We focus our support where it creates the greatest impact.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Build Capacity from Within',
+        description:
+          'Lasting change happens through the people who shape everyday experiences. We work alongside leaders, managers, coaches, educators, and teams to develop sustainable practices that continue long after our engagement ends.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Protect Trust',
+        description:
+          'Psychological support should never become a performance evaluation tool. We maintain clear ethical boundaries, ensuring that personal information remains confidential and that wellbeing is always separated from assessment and decision-making.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Measure What Matters',
+        description:
+          'Every intervention is guided by evidence and evaluated through meaningful outcomes. We establish clear objectives, monitor progress, and continuously refine our approach to ensure measurable and sustainable impact.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start the conversation',
+        href: '/contact',
+      },
+    ]}
+    title="Ready to work together?"
+    subtitle="Every engagement starts with a conversation about where you're headed."
+  />
+</Layout>

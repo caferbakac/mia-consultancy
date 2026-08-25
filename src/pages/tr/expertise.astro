@@ -1,0 +1,288 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Uzmanlığımız',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Uzmanlığımız"
+    title="Temel Bileşenler"
+    subtitle="Üç alan, tek bir disiplin: insanları onları değiştiren anlar üzerinden anlamak."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    columns={3}
+    items={[
+      {
+        title: 'Elit Spor',
+        description:
+          'Sporcuları, akademileri, koçları ve aileleri; gelişim, performans, sakatlık ve profesyonel spora geçiş süreçlerinin psikolojik gereksinimleri konusunda destekliyoruz.',
+        icon: 'tabler:ball-football',
+      },
+      {
+        title: 'Kurumlar',
+        description:
+          'Kurumların; kanıta dayalı işe alım süreçleri, liderlik gelişimi, çalışan iyi oluşu ve kurum kültürü aracılığıyla yeni nesil profesyonelleri çekmesine, sisteme entegre etmesine ve elde tutmasına yardımcı oluyoruz.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'İnsani Yardım ve Sosyal Etki',
+        description:
+          'Karmaşık ve insani bağlamlarda faaliyet gösteren kurumlar için ruh sağlığı, psikososyal destek ve çocuk koruma programları tasarlıyor, uyguluyor ve değerlendiriyoruz.',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** — Elit Spor ve Kulüp Gelişimi ****** -->
+
+  <Content
+    isReversed
+    title="Elit Spor ve Kulüp Gelişimi"
+    items={[
+      {
+        title: 'Koç Gelişimi',
+        description:
+          'Koçları; gözlem, geri bildirim ve kanıta dayalı uygulamalar yoluyla özerkliği, dayanıklılığı, hesap verebilirliği ve uzun vadeli gelişimi destekleyen ortamlar oluşturmaları konusunda destekliyoruz.',
+        icon: 'tabler:presentation',
+      },
+      {
+        title: 'Aile Katılımı',
+        description:
+          'Gereksiz performans baskısını azaltırken desteği güçlendiren pratik rehberlik sunarak, ailelerin sporcu gelişiminde etkili birer paydaş olmasına yardımcı oluyoruz.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Profesyonel Spora Geçiş',
+        description:
+          'Sporculara, akademiden profesyonel futbola uzanan kariyerlerinin en zorlu aşamalarından birinde yapılandırılmış psikolojik hazırlık, adaptasyon ve sürekli destekle eşlik ediyoruz.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Sakatlık Psikolojisi ve Rehabilitasyon',
+        description:
+          'Sporcuların stresle başa çıkmasına, motivasyonlarını korumasına, takıma aidiyet duygusunu sürdürmesine ve performansa güvenle dönmesine yardımcı olarak psikolojik desteği sakatlık önleme ve rehabilitasyon süreçlerine entegre ediyoruz.',
+        icon: 'tabler:first-aid-kit',
+      },
+      {
+        title: 'Yabancı Oyuncu Entegrasyonu',
+        description:
+          'Kulüplerin, yer değişikliğinin getirdiği zorluklar yerine potansiyeli değerlendirebilmesi için, yurt dışından transfer edilen sporcuların yeni kültürlere, ortamlara ve beklentilere uyum sağlamasına yardımcı oluyoruz.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Kulüpten Ayrılma ve Kariyer Geçişi',
+        description:
+          'Sporculara; kulüpten ayrılma sürecinin öncesinde, sırasında ve sonrasında kimlik gelişimi, kariyer planlaması, eğitim sürekliliği ve onları futbol sonrası hayata hazırlayan yapılandırılmış geçiş programlarıyla destek oluyoruz.',
+        icon: 'tabler:door-exit',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Sahada antrenman yapan genç bir futbolcu',
+    }}
+  />
+
+  <!-- Content Widget **************** — İlkelerimiz ****** -->
+
+  <Content
+    isAfterContent
+    title="İlkelerimiz"
+    items={[
+      { description: 'Koçluk kararlarına veya taktiksel süreçlere müdahale etmeyiz.' },
+      { description: 'Psikolojik destek, seçim ve performans değerlendirmesinden bağımsız kalır.' },
+      { description: 'Her müdahale, kulübün ve sporcularının ihtiyaçlarına göre uyarlanır.' },
+      { description: 'Tek seferlik atölyeler yerine uzun vadeli sistem gelişimine öncelik veririz.' },
+      {
+        title: 'Çocuk Koruma',
+        description:
+          'Genç sporcularla çalışmak, psikolojik uzmanlıktan daha fazlasını gerektirir — sağlam koruma sistemleri gerektirir. Çocuk koruma ve ruh sağlığı programlamasında neredeyse on yıllık deneyimimizle; koruma mekanizmalarını, yönlendirme yollarını, gizliliği ve etik veri yönetimini her programın başından itibaren entegre ediyoruz.',
+        icon: 'tabler:shield-lock',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Yönetişim ve koruma uygulamalarını tartışan bir ekip',
+    }}
+  >
+    <Fragment slot="content">
+      <p>Çalışmalarımız, üzerinde taviz vermediğimiz bir dizi ilkeye dayanır:</p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** — Kurumlar: Problem ****** -->
+
+  <Content
+    isReversed
+    tagline="Kurumlar"
+    title="Entegrasyon ve Yeni Nesil"
+    image={{
+      src: 'https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Ofiste toplantı yapan çeşitli bir ekip',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Kurumlar genellikle işe alıma büyük yatırım yapar, ancak yetenekli kişileri ilk yıllar içinde kaybeder. Bunun
+        bedeli yalnızca finansal değildir; kaybedilen bilgi birikimi, azalan güven ve "bu nesil çalışmak istemiyor"
+        varsayımı olarak da kendini gösterir.
+      </p>
+      <p class="mb-4">
+        Gerçek genellikle farklıdır. Sorun çoğunlukla kurumların sunduğu ile insanların motivasyonlarını sürdürmek
+        için ihtiyaç duyduğu şey arasındaki farktır: özerklik, anlamlı gelişim ve aidiyet.
+      </p>
+      <p>
+        Aynı durum kültürel olarak çeşitli iş yerleri için de geçerlidir. Bir ülkeye veya kurum kültürüne yeni
+        katılan çalışanlar, iletişim, ilişkiler ve beklentilere dair yazılı olmayan kurallarla mücadele edebilir. Bu
+        farklılıklar yanlış anlaşıldığında, yetenekli kişiler haksız yere ilgisiz veya zor olarak algılanabilir.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** — Üzerinde Çalıştığımız Konular ****** -->
+
+  <Content
+    isAfterContent
+    title="Üzerinde Çalıştığımız Konular"
+    items={[
+      {
+        title: 'Kuşaklararası İletişim',
+        description:
+          '"Gençler çalışmak istemiyor" gibi anlatıların ötesine geçmeleri için kurumlara destek oluyoruz — deneyimli çalışanlar ile yeni nesil profesyoneller arasında karşılıklı anlayış inşa ediyor ve ekiplerin iletişim, esneklik, amaç ve kariyer gelişimi konusundaki farklı beklentileri fark etmesine yardımcı oluyoruz.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Kültürlerarası ve Göçmen İş Gücü Entegrasyonu',
+        description:
+          'Uluslararası ve kültürel olarak çeşitli ekiplerle çalışan kurumlara destek oluyoruz — iş yeri varsayımlarının katılımı, değerlendirmeyi ve aidiyeti nasıl etkilediğini inceliyor, hem yeni katılanların hem de onları kabul eden ekiplerin daha kapsayıcı uygulamalar geliştirmesine yardımcı oluyoruz.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Psikolojik Güvenlik ve Elde Tutma',
+        description:
+          'Çalışanlar ayrılmadan önce kopma belirtilerini erken tespit ediyor, iş yeri kültürünün, liderliğin ve aidiyetin elde tutmayı nasıl etkilediğini anlıyor ve kurumların daha sağlıklı ve sürdürülebilir ekip ortamları kurmasına destek oluyoruz.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Yapmadıklarımız',
+        description:
+          'Bir İK danışmanlığı değiliz ve çalışan bağlılığı yazılımı veya iş yeri terapisi sunmuyoruz. Bizim rolümüz, kurumların entegrasyon, aidiyet ve elde tutmanın arkasındaki insani süreçleri anlamasına ve güçlendirmesine yardımcı olmaktır. Klinik desteğin gerektiği durumlarda, kurumların uygun yönlendirme yolları oluşturmasına yardımcı oluyoruz.',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bir masa etrafında iş birliği yapan ekip',
+    }}
+  />
+
+  <!-- Content Widget **************** — İnsani Yardım Kuruluşları ****** -->
+
+  <Content
+    isReversed
+    tagline="İnsani Yardım Kuruluşları"
+    title="Ruh Sağlığı, Psikososyal Destek ve Çocuk Koruma"
+    image={{
+      src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bir toplum atölyesi ve eğitim oturumu',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Ruh sağlığı, psikososyal destek ve çocuk koruma alanlarında çalışan insani yardım kuruluşlarına teknik
+        danışmanlık, eğitim ve program geliştirme desteği sağlıyoruz.
+      </p>
+      <p class="mb-4">
+        Yaklaşımımız, insani yardım ortamlarında neredeyse on yıllık deneyime dayanır; doğrudan psikolojik
+        uygulamayı teknik liderlik ve program yönetimiyle birleştirir. Çalışmalarımız arasında mültecilere, işkence
+        ve toplumsal cinsiyete dayalı şiddet mağdurlarına, refakatsiz çocuklara ve kriz ile yerinden edilmeden
+        etkilenen topluluklara destek sağlamak yer almıştır.
+      </p>
+      <p>
+        Hem saha müdahalesinden hem de stratejik program geliştirmeden gelen deneyimi bir araya getiriyoruz; acil
+        durum müdahale tasarımı, ekip oluşturma, ortak kuruluş desteği ve karmaşık, hızla değişen bağlamlarda kanıta
+        dayalı müdahalelerin uyarlanması bunlar arasındadır.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** — Yaptıklarımız ****** -->
+
+  <Content
+    isAfterContent
+    title="Yaptıklarımız"
+    items={[
+      {
+        title: 'Ruh Sağlığı, Psikososyal Destek ve Çocuk Koruma Program Tasarımı',
+        description: 'Toplum ihtiyaçlarına ve insani gerçekliklere yanıt veren programları geliştiriyor ve bağlama uyarlıyoruz.',
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'Eğitim Tasarımı ve Uygulaması',
+        description:
+          'Kanıta dayalı psikososyal müdahaleler, koruma mekanizmaları ve toplum temelli destek yaklaşımları konusunda eğitim programları geliştiriyor ve yürütüyoruz.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Teknik Destek ve Süpervizyon',
+        description:
+          'Zorlu erişim koşulları da dahil olmak üzere, saha ekiplerine ve ortak kuruluşlara rehberlik, kalite güvencesi ve uzaktan teknik destek sağlıyoruz.',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Acil Durum Müdahale Geliştirme',
+        description:
+          'Kurumlara; akut kriz dönemlerinde müdahale yapıları, hizmet yolları, ekip modelleri ve karar alma süreçleri konusunda destek sağlıyoruz.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Program Geliştirme ve Bağışçı Desteği',
+        description:
+          'Teklif geliştirme, bütçeleme, raporlama ve teknik yaklaşımların fon sağlanabilir programlara dönüştürülmesi konusunda destek sağlıyoruz.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'İzleme, Değerlendirme ve Sonuç Ölçümü',
+        description: 'Yalnızca etkinlikleri saymak yerine, anlamlı psikososyal sonuçları ölçen araçlar ve yaklaşımlar geliştiriyoruz.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bir program planını gözden geçiren ekip',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'İhtiyacınızı konuşalım',
+        href: '/tr/contact',
+      },
+    ]}
+    title="Nereden başlayacağınızdan emin değil misiniz?"
+    subtitle="Birlikte çalıştığınız kişiler veya kurum hakkında bize bilgi verin — doğru çalışma kapsamını belirlemenize yardımcı olalım."
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

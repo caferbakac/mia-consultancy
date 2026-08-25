@@ -1,0 +1,101 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Team from '~/components/widgets/Team.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import sercanImg from '~/assets/images/team/sercan.jpg';
+import isilImg from '~/assets/images/team/isil-square.jpg';
+import caferImg from '~/assets/images/team/cafer.jpg';
+import osmanImg from '~/assets/images/team/osman.jpg';
+import sibelImg from '~/assets/images/team/sibel.jpg';
+import mustafaImg from '~/assets/images/team/mustafa.jpeg';
+
+const metadata = {
+  title: 'Team',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Team" title="Meet the Team" />
+
+  <!-- Team Widget ******************* — Core Team ****** -->
+
+  <Team
+    tagline="Leadership"
+    title="Core Team"
+    team={[
+      {
+        name: 'Mehmet Sercan Erbecer',
+        job: 'Founder & Mental Health Expert',
+        image: { src: sercanImg, alt: 'Mehmet Sercan Erbecer' },
+        socials: [{ icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/sercan-erbecer/' }],
+      },
+      {
+        name: 'Işıl Özüak Tunca',
+        job: 'Mental Health Expert & Applied Psychologist',
+        image: { src: isilImg, alt: 'Işıl Özüak Tunca' },
+        socials: [
+          {
+            icon: 'tabler:brand-linkedin',
+            href: 'https://www.linkedin.com/in/%C4%B1%C5%9F%C4%B1l-%C3%B6z%C3%BCak-tunca-b9bb5a82/',
+          },
+        ],
+      },
+      {
+        name: 'Dr. Cafer Bakac',
+        job: 'Researcher & Psychometrician',
+        image: { src: caferImg, alt: 'Dr. Cafer Bakac' },
+        socials: [
+          { icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/cafer-bakac/' },
+          { icon: 'tabler:world', href: 'https://caferbakac.github.io/' },
+        ],
+      },
+    ]}
+  />
+
+  <!-- Team Widget ******************* — Extended Team ****** -->
+
+  <Team
+    tagline="Support"
+    title="Extended Team"
+    team={[
+      {
+        name: 'Osman Yıldız',
+        job: 'Psychosocial Support Consultant',
+        image: { src: osmanImg, alt: 'Osman Yıldız' },
+      },
+      {
+        name: 'Sibel Afyon',
+        job: 'Nutritionist',
+        image: { src: sibelImg, alt: 'Sibel Afyon' },
+        socials: [{ icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/sibel-erbecer/' }],
+      },
+      {
+        name: 'Mustafa Aslan',
+        job: 'PhD Researcher & Data Scientist',
+        image: { src: mustafaImg, alt: 'Mustafa Aslan' },
+        socials: [
+          { icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/aslanmu/' },
+          { icon: 'tabler:world', href: 'https://mustafaslancoto.github.io/' },
+        ],
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Meet the team',
+        href: '/contact',
+      },
+    ]}
+    title="Want to work with us?"
+    subtitle="We're always glad to talk — whether about a project or joining the team."
+  />
+</Layout>

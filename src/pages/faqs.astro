@@ -1,0 +1,97 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'FAQs',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="FAQs" title="Frequently asked questions" subtitle="Answers to what prospective clients ask us most." />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    tagline="Engagements"
+    title="Working with us"
+    columns={2}
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What size of company do you work with?',
+        description:
+          'We work with growing and mid-sized organizations, as well as divisions of larger enterprises, across a range of industries.',
+      },
+      {
+        title: 'How long does a typical engagement last?',
+        description:
+          'It depends on the scope. A focused diagnostic can take a few weeks; a full strategy-to-execution engagement typically runs several months. We scope timelines together before we start.',
+      },
+      {
+        title: 'Do you only advise, or do you help implement?',
+        description:
+          'Both. We build the plan with you, and we can stay embedded with your team through implementation so the plan actually gets executed.',
+      },
+      {
+        title: 'Can we engage you for a single project instead of a retainer?',
+        description:
+          'Yes. Most of our work starts as a project-based engagement with clearly defined scope and deliverables. Ongoing advisory retainers are available once we know each other.',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    tagline="Process & confidentiality"
+    title="How we operate"
+    columns={2}
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'How do you keep our information confidential?',
+        description:
+          'All engagements begin with a mutual non-disclosure agreement. Client information is shared only with the consultants staffed on your engagement.',
+      },
+      {
+        title: 'Who will actually be working on our project?',
+        description:
+          'A senior consultant leads every engagement and stays involved from kickoff to handover — we don\'t hand you off to a junior team.',
+      },
+      {
+        title: 'How do you measure success?',
+        description:
+          'We agree on specific, measurable outcomes at the start of every engagement and report against them throughout — not just at the end.',
+      },
+      {
+        title: 'How do we get started?',
+        description:
+          'Reach out through our contact page. We\'ll set up an initial call to understand your challenge before proposing a scope.',
+        callToAction: {
+          text: 'Contact us',
+          href: '/contact',
+          icon: 'tabler:chevron-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Ask us anything',
+        href: '/contact',
+      },
+    ]}
+    title="Still have questions?"
+    subtitle="We're happy to talk through your specific situation."
+  />
+</Layout>

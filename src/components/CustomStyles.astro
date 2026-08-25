@@ -1,0 +1,66 @@
+---
+// Font family is provided by Astro's native Fonts API (see `fonts` in
+// astro.config.ts and <Font /> in Layout.astro), exposed as `--font-inter`.
+// To switch typefaces, change the `fonts` entry and repoint `--aw-font-*` below.
+
+// 'DM Sans'
+// Nunito
+// Dosis
+// Outfit
+// Roboto
+// Literata
+// 'IBM Plex Sans'
+// Karla
+// Poppins
+// 'Fira Sans'
+// 'Libre Franklin'
+// Inconsolata
+// Raleway
+// Oswald
+// 'Space Grotesk'
+// Urbanist
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: var(--font-inter);
+    --aw-font-serif: var(--font-inter);
+    --aw-font-heading: var(--font-inter);
+
+    /* Brand colors sampled from the Mia Consultancy logo */
+    --aw-color-primary: rgb(79 138 198); /* blue dot */
+    --aw-color-secondary: rgb(81 153 98); /* green dot */
+    --aw-color-accent: rgb(190 110 82); /* terracotta dot */
+
+    --aw-color-text-heading: rgb(33 31 28); /* wordmark ink */
+    --aw-color-text-default: rgb(33 31 28);
+    --aw-color-text-muted: rgb(33 31 28 / 66%);
+    --aw-color-bg-page: rgb(255 255 255);
+
+    --aw-color-bg-page-dark: rgb(23 20 18);
+
+    ::selection {
+      background-color: rgb(79 138 198 / 25%);
+    }
+  }
+
+  .dark {
+    --aw-font-sans: var(--font-inter);
+    --aw-font-serif: var(--font-inter);
+    --aw-font-heading: var(--font-inter);
+
+    --aw-color-primary: rgb(123 167 212);
+    --aw-color-secondary: rgb(116 173 129);
+    --aw-color-accent: rgb(200 132 108);
+
+    --aw-color-text-heading: rgb(247 246 244);
+    --aw-color-text-default: rgb(230 227 222);
+    --aw-color-text-muted: rgb(230 227 222 / 66%);
+    --aw-color-bg-page: rgb(23 20 18);
+
+    ::selection {
+      background-color: rgb(123 167 212 / 35%);
+      color: snow;
+    }
+  }
+</style>
