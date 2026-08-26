@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import { headerData, footerData } from '~/navigation.tr';
+import { getPermalink } from '~/utils/permalinks';
 
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -277,7 +278,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'İhtiyacınızı konuşalım',
-        href: '/tr/contact',
+        href: getPermalink('/tr/contact'),
       },
     ]}
     title="Nereden başlayacağınızdan emin değil misiniz?"

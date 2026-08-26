@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Team from '~/components/widgets/Team.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 import sercanImg from '~/assets/images/team/sercan.jpg';
 import isilImg from '~/assets/images/team/isil-square.jpg';
@@ -92,7 +93,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Meet the team',
-        href: '/contact',
+        href: getPermalink('/contact'),
       },
     ]}
     title="Want to work with us?"

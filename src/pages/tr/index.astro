@@ -8,6 +8,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Mia Consultancy: Potansiyeli Amaçla Buluşturuyoruz',
@@ -23,8 +24,8 @@ const metadata = {
   <Hero
     tagline='<span lang="en">Mia Consultancy</span>'
     actions={[
-      { variant: 'primary', text: 'Temel yetkinliklerimizi keşfedin', href: '/tr/expertise' },
-      { text: 'Bizimle konuşun', href: '/tr/contact' },
+      { variant: 'primary', text: 'Temel yetkinliklerimizi keşfedin', href: getPermalink('/tr/expertise') },
+      { text: 'Bizimle konuşun', href: getPermalink('/tr/contact') },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
@@ -146,7 +147,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Temel yetkinliklerimizi keşfedin',
-        href: '/tr/expertise',
+        href: getPermalink('/tr/expertise'),
       },
     ]}
     title="Her geçiş dönemi, tavsiyeden fazlasını hak eder."

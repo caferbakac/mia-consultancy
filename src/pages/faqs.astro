@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'FAQs',
@@ -74,7 +75,7 @@ const metadata = {
           'Reach out through our contact page. We\'ll set up an initial call to understand your challenge before proposing a scope.',
         callToAction: {
           text: 'Contact us',
-          href: '/contact',
+          href: getPermalink('/contact'),
           icon: 'tabler:chevron-right',
         },
       },
@@ -88,7 +89,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Ask us anything',
-        href: '/contact',
+        href: getPermalink('/contact'),
       },
     ]}
     title="Still have questions?"

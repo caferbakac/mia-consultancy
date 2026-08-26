@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import { headerData, footerData } from '~/navigation.tr';
+import { getPermalink } from '~/utils/permalinks';
 
 import HeroText from '~/components/widgets/HeroText.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -84,7 +85,7 @@ const metadata = {
           'İletişim sayfamız üzerinden bize ulaşın. Bir kapsam önermeden önce ihtiyacınızı anlamak için ilk bir görüşme ayarlayacağız.',
         callToAction: {
           text: 'Bize ulaşın',
-          href: '/tr/contact',
+          href: getPermalink('/tr/contact'),
           icon: 'tabler:chevron-right',
         },
       },
@@ -98,7 +99,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Bize her şeyi sorun',
-        href: '/tr/contact',
+        href: getPermalink('/tr/contact'),
       },
     ]}
     title="Hâlâ sorularınız mı var?"

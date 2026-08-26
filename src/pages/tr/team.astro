@@ -7,6 +7,7 @@ import { headerData, footerData } from '~/navigation.tr';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Team from '~/components/widgets/Team.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 import sercanImg from '~/assets/images/team/sercan.jpg';
 import isilImg from '~/assets/images/team/isil-square.jpg';
@@ -98,7 +99,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Ekiple tanışın',
-        href: '/tr/contact',
+        href: getPermalink('/tr/contact'),
       },
     ]}
     title="Bizimle çalışmak ister misiniz?"

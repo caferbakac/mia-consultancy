@@ -54,6 +54,8 @@ const {
                 {socials.map(({ icon, href }) => (
                   <a
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="text-muted hover:text-primary dark:hover:text-white inline-flex items-center rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-slate-800"
                   >
                     {icon && <Icon name={icon} class="h-5 w-5" />}
