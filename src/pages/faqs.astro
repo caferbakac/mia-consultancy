@@ -13,7 +13,11 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="FAQs" title="Frequently asked questions" subtitle="Answers to what prospective clients ask us most." />
+  <HeroText
+    tagline="FAQs"
+    title="Frequently asked questions"
+    subtitle="Answers to what prospective clients ask us most."
+  />
 
   <!-- FAQs Widget ******************* -->
 
@@ -72,7 +76,7 @@ const metadata = {
       {
         title: 'How do we get started?',
         description:
-          'Reach out through our contact page. We\'ll set up an initial call to understand your challenge before proposing a scope.',
+          "Reach out through our contact page. We'll set up an initial call to understand your challenge before proposing a scope.",
         callToAction: {
           text: 'Contact us',
           href: getPermalink('/contact'),

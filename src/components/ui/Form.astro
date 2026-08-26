@@ -91,27 +91,27 @@ const formId = `aw-form-${Math.random().toString(36).slice(2, 9)}`;
   }
 </form>
 
-{
-  mailto && (
-    <script is:inline define:vars={{ formId, mailto }}>
-      const form = document.getElementById(formId);
+<script is:inline define:vars={{ formId, mailto }}>
+  const form = mailto && document.getElementById(formId);
 
-      form?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!form.reportValidity()) return;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
 
-        const data = new FormData(form);
-        const lines = [];
-        for (const [key, value] of data.entries()) {
-          if (key === 'disclaimer' || !String(value).trim()) continue;
-          const fieldLabel = form.querySelector(`[name="${key}"]`)?.closest('div')?.querySelector('label')?.textContent?.trim();
-          lines.push(`${fieldLabel || key}: ${value}`);
-        }
+    const data = new FormData(form);
+    const lines = [];
+    for (const [key, value] of data.entries()) {
+      if (key === 'disclaimer' || !String(value).trim()) continue;
+      const fieldLabel = form
+        .querySelector(`[name="${key}"]`)
+        ?.closest('div')
+        ?.querySelector('label')
+        ?.textContent?.trim();
+      lines.push(`${fieldLabel || key}: ${value}`);
+    }
 
-        const subject = `Website inquiry from ${data.get('name') || 'website visitor'}`;
-        const mailtoUrl = `mailto:${mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
-        window.location.href = mailtoUrl;
-      });
-    </script>
-  )
-}
+    const subject = `Website inquiry from ${data.get('name') || 'website visitor'}`;
+    const mailtoUrl = `mailto:${mailto}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    window.location.href = mailtoUrl;
+  });
+</script>
