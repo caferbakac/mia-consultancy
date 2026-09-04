@@ -93,4 +93,4 @@ Bu gizlilik politikası zaman zaman güncellenebilir. Güncel sürüm her zaman 
 
 Gizlilikle ilgili soru ve talepleriniz için:
 
-- E-posta: hello@miaconsultancy.com
+- E-posta: info@miaconsultancy.com

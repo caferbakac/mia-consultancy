@@ -89,4 +89,4 @@ This privacy policy may be updated from time to time. The current version is alw
 
 For any privacy-related questions or requests:
 
-- Email: hello@miaconsultancy.com
+- Email: info@miaconsultancy.com
