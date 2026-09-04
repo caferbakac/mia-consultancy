@@ -1,5 +1,5 @@
 <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="35" cy="80" r="16" fill="#4F8AC6"/>
-  <circle cx="80" cy="80" r="16" fill="#519962"/>
-  <circle cx="124" cy="80" r="16" fill="#BE6E52"/>
+  <circle cx="33.5" cy="80" r="16" fill="#4b7fa8" />
+  <circle cx="80" cy="80" r="16" fill="#3f8a65" />
+  <circle cx="126.5" cy="80" r="16" fill="#b1685a" />
 </svg>
