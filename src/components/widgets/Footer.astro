@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { getHomePermalink } from '~/utils/permalinks';
-import LogoMark from '~/assets/images/brand/logo-mark.svg';
+import LogoFull from '~/assets/images/brand/logo-full.svg';
 
 interface Link {
   text?: string;
@@ -35,7 +35,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
           <a class="inline-block" href={getHomePermalink()}>
-            <LogoMark class="h-8 w-auto" role="img" aria-label="Mia Consultancy" />
+            <LogoFull class="h-14 w-auto" role="img" aria-label="Mia Consultancy" />
           </a>
         </div>
         <div class="text-sm text-muted flex gap-1">
