@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     { text: 'Ana Sayfa', href: getPermalink('/tr') },
     { text: 'Temel Yetkinlikler', href: getPermalink('/tr/expertise') },
-    { text: 'Nasıl Çalışırız', href: getPermalink('/tr/how-we-work') },
+    { text: 'Nasıl Çalışıyoruz', href: getPermalink('/tr/how-we-work') },
     { text: 'Ekip', href: getPermalink('/tr/team') },
     { text: 'SSS', href: getPermalink('/tr/faqs') },
   ],
@@ -18,7 +18,7 @@ export const footerData = {
       links: [
         { text: 'Ana Sayfa', href: getPermalink('/tr') },
         { text: 'Temel Yetkinlikler', href: getPermalink('/tr/expertise') },
-        { text: 'Nasıl Çalışırız', href: getPermalink('/tr/how-we-work') },
+        { text: 'Nasıl Çalışıyoruz', href: getPermalink('/tr/how-we-work') },
         { text: 'Ekip', href: getPermalink('/tr/team') },
       ],
     },
