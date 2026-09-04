@@ -3,6 +3,7 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     { text: 'Ana Sayfa', href: getPermalink('/tr') },
+    { text: 'Bizim Hikayemiz', href: getPermalink('/tr/our-story') },
     { text: 'Temel Yetkinlikler', href: getPermalink('/tr/expertise') },
     { text: 'Nasıl Çalışıyoruz', href: getPermalink('/tr/how-we-work') },
     { text: 'Ekip', href: getPermalink('/tr/team') },
@@ -17,6 +18,7 @@ export const footerData = {
       title: 'Şirket',
       links: [
         { text: 'Ana Sayfa', href: getPermalink('/tr') },
+        { text: 'Bizim Hikayemiz', href: getPermalink('/tr/our-story') },
         { text: 'Temel Yetkinlikler', href: getPermalink('/tr/expertise') },
         { text: 'Nasıl Çalışıyoruz', href: getPermalink('/tr/how-we-work') },
         { text: 'Ekip', href: getPermalink('/tr/team') },

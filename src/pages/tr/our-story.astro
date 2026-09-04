@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Bizim Hikayemiz',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Bizim Hikayemiz" title="Bizim Hikayemiz" />
+
+  <!-- Content Widget **************** Nasıl başladık ****** -->
+
+  <Content
+    isReversed
+    image={{
+      src: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Bir masanın etrafında sohbet eden farklı geçmişlerden genç profesyoneller',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        MIA, farklı geçmişlerden gelen bizlerin aynı sorunun peşinde bir araya gelmesiyle doğdu: İnsanlar
+        potansiyellerini ortaya koymaya çalışırken neden çoğu zaman en çok, içinde bulundukları sistemlerde yalnız
+        hissediyor?
+      </p>
+      <p>
+        Spor ve iş dünyası ilk bakışta birbirinden ayrı iki alan gibi görünebilir. Ancak biz her ikisinde de aynı insani
+        hikâyeyi gördük: Bir takıma ya da kuruma katılmak, kendini kanıtlamaya çalışmak, ait olabileceğin bir yer aramak
+        ve belirsizlik içinde yönünü bulmak… Bizi bir araya getiren, hiç kimsenin hayatındaki önemli bir geçiş döneminde
+        “yeterince güçlü olmadığı” düşüncesiyle geride bırakılmaması gerektiğine duyduğumuz ortak inançtı.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** Neye inanıyoruz ****** -->
+
+  <Content
+    isAfterContent
+    image={{
+      src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Ortak bir amaç etrafında birlikte çalışan bir ekip',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        İnsanlar daha iyi desteklendiğinde, içinde bulundukları sistemlerin de güçlendiğine inanıyoruz. Takımlar ve
+        kurumlar; daha bağlı, dayanıklı, iş birliğine açık ve gelişmeye hazır insanlarla yol alır. Böylece daha güçlü
+        bir kültür, daha sürdürülebilir bir performans ve kritik geçişlerde kaybedilmeyen bir potansiyel ortaya çıkar.
+      </p>
+      <p>
+        Bu nedenle MIA, bizim için <em>Meaning, Impact, Action</em> demek: Yaptığımız işe anlam kazandırmak, kalıcı bir etki
+        yaratmak ve bilgiyi somut adımlara dönüştürmek. Kulüpler ve kurumlarla kurduğumuz iş birliklerinde, farklı uzmanlıklarımızı
+        ortak bir amaç etrafında buluşturuyoruz. Genç sporcuların ve profesyonellerin yalnızca performans göstermelerini değil;
+        gelişmelerini, aidiyet kurmalarını ve parçası oldukları yapılara kalıcı değer katmalarını destekleyen sistemler tasarlıyoruz.
+      </p>
+    </Fragment>
+  </Content>
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

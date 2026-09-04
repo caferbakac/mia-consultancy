@@ -3,6 +3,7 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     { text: 'Home', href: getPermalink('/') },
+    { text: 'Our Story', href: getPermalink('/our-story') },
     { text: 'Core Competencies', href: getPermalink('/expertise') },
     { text: 'How We Work', href: getPermalink('/how-we-work') },
     { text: 'Team', href: getPermalink('/team') },
@@ -17,6 +18,7 @@ export const footerData = {
       title: 'Company',
       links: [
         { text: 'Home', href: getPermalink('/') },
+        { text: 'Our Story', href: getPermalink('/our-story') },
         { text: 'Core Competencies', href: getPermalink('/expertise') },
         { text: 'How We Work', href: getPermalink('/how-we-work') },
         { text: 'Team', href: getPermalink('/team') },

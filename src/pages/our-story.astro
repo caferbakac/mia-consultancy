@@ -1,0 +1,66 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Our Story',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Our Story" title="Our Story" />
+
+  <!-- Content Widget **************** How we began ****** -->
+
+  <Content
+    isReversed
+    image={{
+      src: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Young professionals from different backgrounds in conversation around a table',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        MIA began when a group of us from very different backgrounds came together around the same question: why do
+        people so often feel most alone inside the very systems they belong to, precisely when they are trying to
+        realise their potential?
+      </p>
+      <p>
+        At first glance, sport and business can look like two separate worlds. But we saw the same human story in both:
+        joining a team or an organisation, trying to prove yourself, searching for somewhere you can belong, and finding
+        your way through uncertainty. What brought us together was a shared conviction that no one should be left behind
+        at a pivotal transition in their life because they were judged "not strong enough."
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** What we believe ****** -->
+
+  <Content
+    isAfterContent
+    image={{
+      src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'A team working together around a shared purpose',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        We believe that when people are better supported, the systems around them grow stronger too. Teams and
+        organisations move forward with people who are more committed, more resilient, more open to collaboration and
+        ready to develop. The result is a stronger culture, more sustainable performance, and potential that is not lost
+        at critical transitions.
+      </p>
+      <p>
+        That is why MIA means <em>Meaning, Impact, Action</em> to us: bringing meaning to the work we do, creating lasting
+        impact, and turning knowledge into concrete steps. In our partnerships with clubs and organisations, we bring our
+        different areas of expertise together around a shared purpose. We design systems that support young athletes and professionals
+        not only to perform, but to develop, to build a sense of belonging, and to add lasting value to the structures they
+        are part of.
+      </p>
+    </Fragment>
+  </Content>
+</Layout>
