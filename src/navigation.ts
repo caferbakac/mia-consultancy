@@ -43,9 +43,6 @@ export const footerData = {
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
-  socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-  ],
+  socialLinks: [{ ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' }],
   footNote: `© ${new Date().getFullYear()} Mia Consultancy · All rights reserved.`,
 };
