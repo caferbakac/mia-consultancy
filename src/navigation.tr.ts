@@ -35,13 +35,13 @@ export const footerData = {
       title: 'Yasal',
       links: [
         { text: 'Şartlar', href: getPermalink('/terms') },
-        { text: 'Gizlilik Politikası', href: getPermalink('/privacy') },
+        { text: 'Gizlilik Politikası', href: getPermalink('/tr/privacy') },
       ],
     },
   ],
   secondaryLinks: [
     { text: 'Şartlar', href: getPermalink('/terms') },
-    { text: 'Gizlilik Politikası', href: getPermalink('/privacy') },
+    { text: 'Gizlilik Politikası', href: getPermalink('/tr/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },

@@ -1,22 +1,36 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+
+import { headerData, footerData } from '~/navigation';
+import { headerData as headerDataTr, footerData as footerDataTr } from '~/navigation.tr';
 
 import type { MetaData } from '~/types';
 
 export interface Props {
   frontmatter: {
     title?: string;
+    lang?: string;
   };
 }
 
 const { frontmatter } = Astro.props;
+
+// Markdown pages exist in both languages; `lang: tr` in the frontmatter swaps
+// the navigation and footer over to the Turkish ones.
+const isTr = frontmatter?.lang === 'tr';
+const nav = isTr ? headerDataTr : headerData;
+const foot = isTr ? footerDataTr : footerData;
 
 const metadata: MetaData = {
   title: frontmatter?.title,
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} lang={isTr ? 'tr' : undefined}>
+  <Header slot="header" {...nav} isSticky showToggleTheme />
+
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
     <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter">{frontmatter.title}</h1>
     <div
@@ -25,4 +39,6 @@ const metadata: MetaData = {
       <slot />
     </div>
   </section>
+
+  <Footer slot="footer" {...foot} />
 </Layout>
