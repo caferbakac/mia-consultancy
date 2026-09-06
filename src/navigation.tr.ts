@@ -43,6 +43,12 @@ export const footerData = {
     { text: 'Şartlar', href: getPermalink('/tr/terms') },
     { text: 'Gizlilik Politikası', href: getPermalink('/tr/privacy') },
   ],
-  socialLinks: [{ ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' }],
+  socialLinks: [
+    {
+      ariaLabel: 'LinkedIn',
+      icon: 'tabler:brand-linkedin',
+      href: 'https://www.linkedin.com/in/mia-consultancy-2a44b035b/',
+    },
+  ],
   footNote: `© ${new Date().getFullYear()} Mia Consultancy · Tüm hakları saklıdır.`,
 };
