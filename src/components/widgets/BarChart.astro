@@ -1,0 +1,145 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+export interface Bar {
+  /** Category label shown beneath the bar. */
+  label: string;
+  /** Numeric height of the bar, on the same scale as `max`. */
+  value: number;
+  /** Formatted value shown above the bar, e.g. "200%" or "€2.5m". */
+  display: string;
+}
+
+export interface Tick {
+  value: number;
+  label: string;
+}
+
+export interface Props {
+  id?: string;
+  tagline?: string;
+  title: string;
+  subtitle?: string;
+  /** Rotated caption along the vertical axis. */
+  axisLabel: string;
+  /** Caption beneath the category labels. */
+  xAxisLabel?: string;
+  bars: Bar[];
+  ticks: Tick[];
+  /** Top of the scale. Bar heights are drawn as value / max. */
+  max: number;
+  color?: 'primary' | 'secondary' | 'accent';
+  /** Small print under the plot: provenance and caveats. */
+  source?: string;
+  /** Plain-language reading of what the chart shows. */
+  summary: string;
+  isDark?: boolean;
+}
+
+const {
+  id,
+  tagline,
+  title,
+  subtitle,
+  axisLabel,
+  xAxisLabel,
+  bars = [],
+  ticks = [],
+  max,
+  color = 'primary',
+  source,
+  summary,
+  isDark = false,
+} = Astro.props as Props;
+
+const tone = {
+  primary: 'var(--aw-color-primary)',
+  secondary: 'var(--aw-color-secondary)',
+  accent: 'var(--aw-color-accent)',
+}[color];
+
+const pct = (value: number) => `${(value / max) * 100}%`;
+
+// Screen readers get the numbers as a sentence rather than a wall of divs.
+const description = `${title}. ${bars.map(({ label, display }) => `${label}: ${display}`).join('. ')}.`;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass="max-w-5xl mx-auto">
+  <figure class="m-0" style={`--tone: ${tone};`}>
+    <!-- Headline -->
+    <div class="mb-8 text-center md:mb-10">
+      {
+        tagline && (
+          <p class="mb-2 text-base font-bold uppercase tracking-wide text-secondary dark:text-blue-200">{tagline}</p>
+        )
+      }
+      <h2 class="font-bold font-heading leading-tighter tracking-tighter text-heading text-2xl md:text-3xl lg:text-4xl">
+        {title}
+      </h2>
+      {subtitle && <p class="mx-auto mt-3 max-w-3xl text-base md:text-lg text-muted">{subtitle}</p>}
+    </div>
+
+    <!-- Plot -->
+    <div class="flex gap-2 md:gap-3" role="img" aria-label={description}>
+      <!-- Vertical axis caption -->
+      <div class="flex shrink-0 items-center pb-10">
+        <span class="whitespace-nowrap text-[11px] text-muted [writing-mode:vertical-rl] rotate-180 md:text-xs">
+          {axisLabel}
+        </span>
+      </div>
+
+      <div class="min-w-0 flex-1">
+        <div class="relative h-56 pl-9 md:h-72 md:pl-12">
+          <!-- Gridlines and their values -->
+          {
+            ticks.map(({ value, label }) => (
+              <div class="absolute right-0 left-9 md:left-12" style={`bottom: ${pct(value)};`} aria-hidden="true">
+                <div class="border-t border-gray-200 dark:border-slate-700" />
+                <span class="absolute right-full -translate-y-1/2 pr-2 text-[11px] text-muted md:text-xs">{label}</span>
+              </div>
+            ))
+          }
+
+          <!-- Bars -->
+          <div class="absolute inset-y-0 right-0 left-9 flex items-end gap-3 sm:gap-6 md:left-12 md:gap-10">
+            {
+              bars.map(({ value, display }) => (
+                <div class="flex h-full min-w-0 flex-1 flex-col items-center justify-end">
+                  <span class="mb-1 text-sm font-bold text-heading md:text-base">{display}</span>
+                  <div
+                    class="w-full rounded-t-sm motion-safe:transition-[height] motion-safe:duration-700"
+                    style={`height: ${pct(value)}; background-color: var(--tone);`}
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Category labels -->
+        <div
+          class="flex gap-3 border-t border-gray-300 pt-2 pl-9 sm:gap-6 dark:border-slate-600 md:gap-10 md:pl-12"
+          aria-hidden="true"
+        >
+          {
+            bars.map(({ label }) => (
+              <span class="min-w-0 flex-1 text-center text-[11px] leading-snug text-muted md:text-sm">{label}</span>
+            ))
+          }
+        </div>
+
+        {xAxisLabel && <p class="mt-2 pl-9 text-center text-[11px] text-muted md:pl-12 md:text-xs">{xAxisLabel}</p>}
+      </div>
+    </div>
+
+    {source && <p class="mt-5 text-[11px] leading-relaxed text-muted md:text-xs">{source}</p>}
+
+    <!-- What the chart says -->
+    <figcaption
+      class="mt-6 border-l-4 pl-4 text-base leading-relaxed text-muted md:mt-8 md:pl-5 md:text-lg text-pretty"
+      style="border-color: var(--tone);"
+    >
+      {summary}
+    </figcaption>
+  </figure>
+</WidgetWrapper>

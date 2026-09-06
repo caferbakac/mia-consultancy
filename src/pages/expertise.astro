@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
+import BarChart from '~/components/widgets/BarChart.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -116,6 +117,35 @@ const metadata = {
     </Fragment>
   </Content>
 
+  <!-- BarChart Widget *************** Sport: value of development ****** -->
+
+  <BarChart
+    id="player-development-value"
+    tagline="Elite Sport"
+    title="Player development can create future financial value"
+    subtitle="Current FIFA solidarity mechanism: 5% of eligible transfer compensation"
+    axisLabel="Total solidarity pool (€m)"
+    xAxisLabel="Illustrative eligible transfer fee"
+    color="accent"
+    max={2.5}
+    ticks={[
+      { value: 0, label: '0' },
+      { value: 0.5, label: '0.5' },
+      { value: 1, label: '1.0' },
+      { value: 1.5, label: '1.5' },
+      { value: 2, label: '2.0' },
+      { value: 2.5, label: '2.5' },
+    ]}
+    bars={[
+      { label: '€5m', value: 0.25, display: '€250k' },
+      { label: '€10m', value: 0.5, display: '€500k' },
+      { label: '€20m', value: 1, display: '€1m' },
+      { label: '€50m', value: 2.5, display: '€2.5m' },
+    ]}
+    source="The 5% is distributed among eligible training clubs; an individual club receives its allocated share. Source: FIFA RSTP / Clearing House."
+    summary="Developing a player is not only a sporting investment. When that player later moves for a fee, FIFA's solidarity mechanism returns 5% of it to the clubs that trained them, so a €10m transfer generates a €500k pool and a €50m transfer €2.5m. The clubs that keep young athletes progressing, and document that development properly, are the ones positioned to benefit."
+  />
+
   <!-- Content Widget **************** Organizations: Problem ****** -->
 
   <Content
@@ -180,6 +210,32 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Team collaborating around a table',
     }}
+  />
+
+  <!-- BarChart Widget *************** Organizations: cost of losing talent ****** -->
+
+  <BarChart
+    id="talent-replacement-cost"
+    tagline="Organisations"
+    title="Losing talent has a measurable cost"
+    subtitle="Estimated replacement cost by role"
+    axisLabel="Estimated replacement cost (% of annual salary)"
+    color="primary"
+    max={200}
+    ticks={[
+      { value: 0, label: '0' },
+      { value: 50, label: '50' },
+      { value: 100, label: '100' },
+      { value: 150, label: '150' },
+      { value: 200, label: '200' },
+    ]}
+    bars={[
+      { label: 'Frontline employee', value: 40, display: '40%' },
+      { label: 'Technical professional', value: 80, display: '80%' },
+      { label: 'Leader / manager', value: 200, display: '200%' },
+    ]}
+    source="Source: Gallup. Estimates exclude unmeasured losses in morale and knowledge."
+    summary="Replacing someone costs far more than most organisations account for: roughly 40% of annual salary for a frontline employee, 80% for a technical professional and up to 200% for a leader. Losing one manager can therefore cost two full salaries, before counting the disruption to teams and the knowledge that leaves with them. Retention is not a soft concern; it is a budget line."
   />
 
   <!-- CallToAction Widget *********** -->

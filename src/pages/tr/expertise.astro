@@ -8,6 +8,7 @@ import { getPermalink } from '~/utils/permalinks';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
+import BarChart from '~/components/widgets/BarChart.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -116,6 +117,35 @@ const metadata = {
     </Fragment>
   </Content>
 
+  <!-- BarChart Widget *************** Spor: gelisimin degeri ****** -->
+
+  <BarChart
+    id="oyuncu-gelisim-degeri"
+    tagline="Elit Spor"
+    title="Oyuncu gelişimi geleceğe dönük finansal değer yaratır"
+    subtitle="Mevcut FIFA dayanışma mekanizması: uygun transfer bedelinin %5'i"
+    axisLabel="Toplam dayanışma havuzu (milyon €)"
+    xAxisLabel="Örnek uygun transfer bedeli"
+    color="accent"
+    max={2.5}
+    ticks={[
+      { value: 0, label: '0' },
+      { value: 0.5, label: '0,5' },
+      { value: 1, label: '1,0' },
+      { value: 1.5, label: '1,5' },
+      { value: 2, label: '2,0' },
+      { value: 2.5, label: '2,5' },
+    ]}
+    bars={[
+      { label: '5 mn €', value: 0.25, display: '250 bin €' },
+      { label: '10 mn €', value: 0.5, display: '500 bin €' },
+      { label: '20 mn €', value: 1, display: '1 mn €' },
+      { label: '50 mn €', value: 2.5, display: '2,5 mn €' },
+    ]}
+    source="%5'lik pay, uygun tüm yetiştirme kulüpleri arasında paylaştırılır; her kulüp kendisine düşen payı alır. Kaynak: FIFA RSTP / Clearing House."
+    summary="Bir oyuncuyu yetiştirmek yalnızca sportif bir yatırım değildir. Oyuncu ilerleyen dönemde bir bedelle transfer olduğunda, FIFA'nın dayanışma mekanizması bu bedelin %5'ini onu yetiştiren kulüplere geri kazandırır: 10 milyon avroluk bir transfer 500 bin avroluk, 50 milyon avroluk bir transfer ise 2,5 milyon avroluk bir havuz oluşturur. Genç sporcuların gelişimini sürdüren ve bu gelişimi usulüne uygun biçimde belgeleyen kulüpler, bu değerden yararlanabilecek konumdadır."
+  />
+
   <!-- Content Widget **************** Entegrasyon ve Yeni Nesil ****** -->
 
   <Content
@@ -182,6 +212,32 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
       alt: 'Bir masa etrafında iş birliği yapan ekip',
     }}
+  />
+
+  <!-- BarChart Widget *************** Kurumlar: yetenek kaybinin maliyeti ****** -->
+
+  <BarChart
+    id="yetenek-kaybi-maliyeti"
+    tagline="Kurumlar"
+    title="Yetenek kaybının ölçülebilir bir maliyeti vardır"
+    subtitle="Role göre tahmini yerine koyma maliyeti"
+    axisLabel="Tahmini yerine koyma maliyeti (yıllık maaşın %'si)"
+    color="primary"
+    max={200}
+    ticks={[
+      { value: 0, label: '0' },
+      { value: 50, label: '50' },
+      { value: 100, label: '100' },
+      { value: 150, label: '150' },
+      { value: 200, label: '200' },
+    ]}
+    bars={[
+      { label: 'Saha çalışanı', value: 40, display: '%40' },
+      { label: 'Teknik uzman', value: 80, display: '%80' },
+      { label: 'Lider / yönetici', value: 200, display: '%200' },
+    ]}
+    source="Kaynak: Gallup. Tahminler, moral ve kurumsal bilgi kaybı gibi ölçülemeyen etkileri içermez."
+    summary="Bir çalışanın yerine yenisini koymak, çoğu kurumun hesaba kattığından çok daha maliyetlidir: saha çalışanı için yıllık maaşın yaklaşık %40'ı, teknik uzman için %80'i, lider düzeyinde ise %200'ü. Tek bir yöneticiyi kaybetmek, ekiplerde yarattığı aksama ve kurumdan çıkıp giden bilgi birikimi hesaba katılmadan bile iki yıllık maaşa mal olabilir. Elde tutma, yumuşak bir başlık değil, doğrudan bir bütçe kalemidir."
   />
 
   <!-- CallToAction Widget *********** -->
