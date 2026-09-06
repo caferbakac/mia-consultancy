@@ -220,7 +220,7 @@ const metadata = {
     id="yetenek-kaybi-maliyeti"
     tagline="Kurumlar"
     title="Yetenek kaybının ölçülebilir bir maliyeti vardır"
-    subtitle="Role göre tahmini yerine koyma maliyeti"
+    subtitle="Pozisyona göre tahmini devir maliyeti"
     axisLabel="Tahmini yerine koyma maliyeti (yıllık maaşın %'si)"
     color="primary"
     max={200}
@@ -237,7 +237,10 @@ const metadata = {
       { label: 'Lider / yönetici', value: 200, display: '%200' },
     ]}
     source="Kaynak: Gallup. Tahminler, moral ve kurumsal bilgi kaybı gibi ölçülemeyen etkileri içermez."
-    summary="Bir çalışanın yerine yenisini koymak, çoğu kurumun hesaba kattığından çok daha maliyetlidir: saha çalışanı için yıllık maaşın yaklaşık %40'ı, teknik uzman için %80'i, lider düzeyinde ise %200'ü. Tek bir yöneticiyi kaybetmek, ekiplerde yarattığı aksama ve kurumdan çıkıp giden bilgi birikimi hesaba katılmadan bile iki yıllık maaşa mal olabilir. Elde tutma, yumuşak bir başlık değil, doğrudan bir bütçe kalemidir."
+    summary={[
+      'Bir çalışanın kaybını telafi etmek, çoğu kurumun öngördüğünden çok daha maliyetlidir: bu maliyet, saha çalışanlarında yıllık maaşın yaklaşık %40’ına, teknik uzmanlarda %80’ine, üst düzey yöneticilerde ise %200’üne kadar çıkabilir. Tek bir yöneticinin kurumdan ayrılması, ekiplerde yarattığı aksama ve beraberinde götürdüğü kurumsal bilgi birikimi hesaba katılmasa bile, iki yıllık maaşa eşdeğer bir maliyet yaratabilir.',
+      'Bu nedenle çalışanları elde tutmak, doğrudan bütçeyi etkileyen somut bir iş meselesidir.',
+    ]}
   />
 
   <!-- CallToAction Widget *********** -->
