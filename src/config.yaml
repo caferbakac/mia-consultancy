@@ -1,7 +1,7 @@
 site:
   name: Mia Consultancy
   site: 'https://miaconsultancy.com'
-  base: '/mia-consultancy'
+  base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: ''
