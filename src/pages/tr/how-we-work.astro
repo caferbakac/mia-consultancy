@@ -7,6 +7,8 @@ import { getPermalink } from '~/utils/permalinks';
 
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -58,6 +60,49 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- Features2 Widget: Neyi Ölçüyoruz ************** -->
+
+  <Features2
+    id="neyi-olcuyoruz"
+    title="Neyi Ölçüyoruz?"
+    subtitle="Başarılı geçişler yalnızca beceri ve deneyime bağlı değildir. İnsanların nasıl uyum sağladığını, geliştiğini ve performans gösterdiğini şekillendiren insani koşullara bakıyoruz."
+    columns={2}
+    items={[
+      {
+        title: 'Özerklik',
+        description: 'Kişiler söz hakkına, seçim özgürlüğüne ve sahiplenme duygusuna sahip olduklarını hissediyor mu?',
+        icon: 'tabler:compass',
+      },
+      {
+        title: 'Yetkinlik',
+        description:
+          'Kendilerinden beklenenleri karşılayacak yeterliliğe ve donanıma sahip olduklarını hissediyorlar mı?',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'İlişkisellik',
+        description: 'Bağ kurduklarını, desteklendiklerini ve aidiyet duyduklarını hissediyorlar mı?',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Netlik',
+        description: 'Rollerini, kendilerinden beklenenleri ve bundan sonra ne olacağını anlıyorlar mı?',
+        icon: 'tabler:map-2',
+      },
+    ]}
+  />
+
+  <WidgetWrapper containerClass="max-w-3xl pt-0 md:pt-0 lg:pt-0 text-center">
+    <p class="text-muted">
+      Bağlama göre psikolojik güvenlik, destek ağları, kimlik, geçişe hazır oluş ve beklentiler ile gerçeklik arasındaki
+      farkı da inceliyoruz.
+    </p>
+    <p class="text-muted mt-4">
+      Bu bulguları, desteğe nerede ihtiyaç duyulduğunu belirlemek, hedefe yönelik çalışmalar tasarlamak ve anlamlı bir
+      değişimin gerçekleşip gerçekleşmediğini ölçmek için kullanıyoruz.
+    </p>
+  </WidgetWrapper>
 
   <!-- CallToAction Widget *********** -->
 

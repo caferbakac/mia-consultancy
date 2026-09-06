@@ -2,6 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -52,6 +54,48 @@ const metadata = {
       },
     ]}
   />
+
+  <!-- Features2 Widget: What We Measure ************** -->
+
+  <Features2
+    id="what-we-measure"
+    title="What We Measure"
+    subtitle="Successful transitions depend on more than skills and experience. We look at the human conditions that shape how people adapt, develop and perform."
+    columns={2}
+    items={[
+      {
+        title: 'Autonomy',
+        description: 'Do people feel they have a voice, choice and ownership?',
+        icon: 'tabler:compass',
+      },
+      {
+        title: 'Competence',
+        description: 'Do they feel capable and equipped to meet what is expected of them?',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Relatedness',
+        description: 'Do they feel connected, supported and that they belong?',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Clarity',
+        description: 'Do they understand their role, expectations and what comes next?',
+        icon: 'tabler:map-2',
+      },
+    ]}
+  />
+
+  <WidgetWrapper containerClass="max-w-3xl pt-0 md:pt-0 lg:pt-0 text-center">
+    <p class="text-muted">
+      Depending on the context, we also explore psychological safety, support networks, identity, transition readiness
+      and the gap between expectations and reality.
+    </p>
+    <p class="text-muted mt-4">
+      We use these insights to identify where support is needed, design targeted interventions and measure whether
+      meaningful change has taken place.
+    </p>
+  </WidgetWrapper>
 
   <!-- CallToAction Widget *********** -->
 
