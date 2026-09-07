@@ -47,9 +47,10 @@ const {
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
-// Strip the site's base path (e.g. `/mia-consultancy` on GitHub Pages) before
-// reasoning about `/tr` prefixes, then use getPermalink to add it back — the
-// same base-aware helper every other link on the site already goes through.
+// Strip the site's base path before reasoning about `/tr` prefixes, then use
+// getPermalink to add it back — the same base-aware helper every other link on
+// the site already goes through. A no-op while `base` is `/`, but it keeps the
+// toggle correct if the site is ever served from a subpath again.
 const basePrefix = `/${trimSlash(SITE.base || '/')}`;
 const relPath =
   basePrefix !== '/' && (currentPath === basePrefix || currentPath.startsWith(`${basePrefix}/`))
@@ -317,7 +318,7 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
       if (!el) return;
 
       // Vite replaces `import.meta.env.BASE_URL` at build time with the
-      // configured `base` (e.g. `/mia-consultancy/` on GitHub Pages, `/` locally).
+      // configured `base` (currently `/`; a subpath would arrive as `/sub/`).
       const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
       let path = window.location.pathname.replace(/\/+$/, '') || '/';
       if (base && (path === base || path.startsWith(`${base}/`))) {
