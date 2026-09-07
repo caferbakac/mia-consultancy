@@ -37,7 +37,7 @@
  * the visitor will see the error message. Deploy the Worker before, or with,
  * this front end.
  */
-export const CONTACT_ENDPOINT = '/api/contact';
+export const CONTACT_ENDPOINT = 'https://api.web3forms.com/submit';
 
 /** Shown to visitors as the direct route, and named when a submission fails. */
 export const CONTACT_EMAIL = 'info@miaconsultancy.com';
