@@ -11,16 +11,16 @@ metadata:
   title:
     default: Mia Consultancy
     template: '%s — Mia Consultancy'
-  description: 'Mia Consultancy helps growing businesses solve their toughest strategic and operational challenges.'
+  description: 'Mia Consultancy is a psychology and organisational consultancy working with elite sport and organisations, supporting people through the transitions that shape how they adapt, develop and perform.'
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Mia Consultancy
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/og-default.png'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
     handle: ''
