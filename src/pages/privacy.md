@@ -10,20 +10,25 @@ miaconsultancy.com, how it is used, and what rights you have.
 
 ## 1. General
 
-This website is an informational site. There is no membership, no account creation, and no form that transmits your
-details to us. Information reaches us only when you choose to send us an email directly.
+This website is an informational site. There is no membership and no account creation. Information reaches us in two
+ways only: when you submit the contact form, or when you choose to send us an email directly.
 
 Personal information you send us is never shared with third parties, sold, or used for marketing purposes without your
 explicit consent.
 
 ## 2. What Data Is Processed on This Site
 
-**The contact form runs in your browser.** When you fill in the form on our contact page and submit it, your details are
-not sent to us. Instead, a draft email opens in your own email program, pre-filled with what you typed. Nothing reaches
-us until you decide to send that draft yourself.
+**The contact form.** When you submit the form on our contact page, the name, company, email address and message you
+entered are sent over an encrypted connection to our own website infrastructure, which forwards them to our inbox as an
+email. They are not passed to any third-party form or marketing service, and they are used only to answer your enquiry.
+Our hosting provider, Cloudflare, processes the submission in transit on our behalf as part of delivering the site, and
+its servers may be located outside your country, including outside the EEA and Türkiye. Please do not include sensitive
+personal information, or confidential material about third parties, in the form; if you would rather not use it, you can
+email us directly at the address at the end of this page.
 
 **Email contact.** When you email us, your name, email address and anything else you include in your message arrive in
-our inbox and are kept so that we can respond to your enquiry.
+our inbox and are kept so that we can respond to your enquiry. Messages sent through the contact form are kept in the
+same way once they reach us.
 
 **Technical logs.** This site is statically hosted. As with any web server, our hosting provider may record technical
 connection data such as IP address, browser type and time of access, for security and for delivering the site. We do not

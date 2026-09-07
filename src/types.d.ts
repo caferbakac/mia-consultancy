@@ -189,9 +189,18 @@ export interface Form {
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
-  /** Recipient address. When set, submitting the form opens the visitor's
-   * email client with the fields pre-filled instead of posting anywhere. */
-  mailto?: string;
+  /** Same-origin route the submission is posted to as JSON. */
+  endpoint?: string;
+  /** Subject line passed through to the handler. */
+  subject?: string;
+  /** Direct address named in the failure message. */
+  contactEmail?: string;
+  /** Shown on the button while the submission is in flight. */
+  sendingLabel?: string;
+  /** Shown once the submission has been accepted. */
+  successMessage?: string;
+  /** Shown when the submission could not be delivered. */
+  errorMessage?: string;
 }
 
 // WIDGETS

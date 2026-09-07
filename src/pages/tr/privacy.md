@@ -11,21 +11,25 @@ bilgilerin işlendiğini, bu bilgilerin nasıl kullanıldığını ve hakların�
 
 ## 1. Genel Bilgi
 
-Bu web sitesi bir tanıtım sitesidir. Site üzerinde üyelik, hesap oluşturma veya bilgilerinizi bize ileten bir form
-bulunmamaktadır. Ziyaretiniz sırasında bizimle paylaştığınız bilgiler yalnızca siz bize doğrudan e-posta gönderdiğinizde
-tarafımıza ulaşır.
+Bu web sitesi bir tanıtım sitesidir. Site üzerinde üyelik veya hesap oluşturma bulunmamaktadır. Bilgileriniz
+tarafımıza yalnızca iki yolla ulaşır: iletişim formunu gönderdiğinizde ya da bize doğrudan e-posta yazdığınızda.
 
 Bize ulaşan kişisel bilgiler, açık rızanız olmaksızın üçüncü kişilerle paylaşılmaz, satılmaz ve pazarlama amacıyla
 kullanılmaz.
 
 ## 2. Bu Sitede Hangi Veriler İşleniyor?
 
-**İletişim formu tarayıcınızda çalışır.** İletişim sayfamızdaki formu doldurup gönderdiğinizde, bilgileriniz bize
-iletilmez; bunun yerine kendi cihazınızdaki e-posta programınızda, alanlara yazdıklarınızla önceden doldurulmuş bir
-e-posta taslağı açılır. Bu taslağı göndermeye karar verene kadar hiçbir bilgi tarafımıza ulaşmaz.
+**İletişim formu.** İletişim sayfamızdaki formu gönderdiğinizde; girdiğiniz ad, şirket, e-posta adresi ve mesaj,
+şifreli bir bağlantı üzerinden kendi web sitesi altyapımıza iletilir ve oradan e-posta olarak posta kutumuza aktarılır.
+Bu bilgiler herhangi bir üçüncü taraf form veya pazarlama hizmetine aktarılmaz ve yalnızca talebinizi yanıtlamak için
+kullanılır. Barındırma sağlayıcımız Cloudflare, sitenin sunulması kapsamında bu iletimi bizim adımıza işler ve sunucuları
+bulunduğunuz ülke dışında, AEA ve Türkiye dışında yer alabilir. Lütfen form aracılığıyla hassas kişisel bilgiler ya da
+üçüncü kişilere ait gizli bilgiler paylaşmayınız; formu kullanmak istemiyorsanız sayfanın sonundaki adrese doğrudan
+e-posta gönderebilirsiniz.
 
 **E-posta ile iletişim.** Bize e-posta gönderdiğinizde; adınız, e-posta adresiniz ve mesajınızda paylaştığınız diğer
-bilgiler e-posta kutumuza ulaşır ve talebinizi yanıtlayabilmek için saklanır.
+bilgiler e-posta kutumuza ulaşır ve talebinizi yanıtlayabilmek için saklanır. İletişim formu üzerinden gelen mesajlar da
+bize ulaştıktan sonra aynı şekilde saklanır.
 
 **Teknik kayıtlar.** Sitemiz statik olarak barındırılmaktadır. Tüm web sunucularında olduğu gibi, barındırma
 sağlayıcımız güvenlik ve sitenin sunulması amacıyla IP adresi, tarayıcı türü ve erişim zamanı gibi teknik bağlantı

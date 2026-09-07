@@ -27,9 +27,9 @@ services or a qualified health professional.
 
 ## 3. Contacting Us
 
-The contact form on this website opens a draft message in your own email program; by itself it transmits nothing to us.
-When you write to us, please do not include sensitive personal information, or confidential material concerning third
-parties, before an engagement and the appropriate agreements are in place.
+Submitting the contact form sends your message to us by email; our privacy policy explains how that submission is
+handled. When you write to us, please do not include sensitive personal information, or confidential material concerning
+third parties, before an engagement and the appropriate agreements are in place.
 
 ## 4. Our Work with Clients
 

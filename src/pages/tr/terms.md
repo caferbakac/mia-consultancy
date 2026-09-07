@@ -29,9 +29,9 @@ yetkin bir sağlık uzmanına başvurunuz.
 
 ## 3. Bizimle İletişime Geçmeniz
 
-Web sitesindeki iletişim formu, kendi cihazınızdaki e-posta programınızda bir taslak mesaj açar; formun kendisi bize
-hiçbir bilgi iletmez. Bize yazarken, bir iş birliği ve buna ilişkin sözleşmeler kurulmadan önce hassas kişisel bilgiler
-ya da üçüncü kişilere ait gizli bilgiler paylaşmamanızı rica ederiz.
+İletişim formunu gönderdiğinizde mesajınız bize e-posta olarak iletilir; bu iletinin nasıl işlendiği Gizlilik
+Politikamızda açıklanmaktadır. Bize yazarken, bir iş birliği ve buna ilişkin sözleşmeler kurulmadan önce hassas kişisel
+bilgiler ya da üçüncü kişilere ait gizli bilgiler paylaşmamanızı rica ederiz.
 
 ## 4. Müşterilerimizle Yürüttüğümüz Çalışmalar
 

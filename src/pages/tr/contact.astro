@@ -7,6 +7,7 @@ import { headerData, footerData } from '~/navigation.tr';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import { CONTACT_ENDPOINT } from '~/form-config';
 
 const metadata = {
   title: 'İletişim',
@@ -52,7 +53,12 @@ const metadata = {
         'Bu formu göndererek, kişisel bilgilerinizin Gizlilik Politikamıza uygun şekilde toplanmasını kabul etmiş olursunuz.',
     }}
     description="Genellikle bir iş günü içinde yanıt veriyoruz."
-    mailto="sercan.erbecer@outlook.com"
+    button="Mesajı Gönder"
+    endpoint={CONTACT_ENDPOINT}
+    subject="Mia Consultancy web sitesinden yeni ileti"
+    sendingLabel="Gönderiliyor..."
+    successMessage="Teşekkür ederiz. Mesajınız iletildi, en kısa sürede size geri döneceğiz."
+    errorMessage="Maalesef mesajınız gönderilemedi. Lütfen doğrudan info@miaconsultancy.com adresine e-posta gönderin."
   />
 
   <!-- Features2 Widget ************** -->
