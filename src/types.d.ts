@@ -99,6 +99,7 @@ interface TeamMember {
   name?: string;
   job?: string;
   image?: Image;
+  email?: string;
   socials?: Array<Social>;
   description?: string;
   classes?: Record<string, string>;
