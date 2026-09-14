@@ -1,0 +1,144 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+import { getPermalink } from '~/utils/permalinks';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import BarChart from '~/components/widgets/BarChart.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Elit Spor',
+  description:
+    'Sporcuları, akademileri, koçları ve aileleri; gelişim, performans, sakatlık ve profesyonel spora geçiş süreçlerinin psikolojik gereksinimleri konusunda destekliyoruz.',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Temel Yetkinlikler"
+    title="Elit Spor"
+    subtitle="Sporcuları, akademileri, koçları ve aileleri; gelişim, performans, sakatlık ve profesyonel spora geçiş süreçlerinin psikolojik gereksinimleri konusunda destekliyoruz."
+  />
+
+  <!-- Content Widget **************** Elit Spor ve Kulüp Gelişimi ****** -->
+
+  <Content
+    isReversed
+    title="Elit Spor ve Kulüp Gelişimi"
+    items={[
+      {
+        title: 'Aile Katılımı',
+        description:
+          'Ailelerin, sporcu gelişiminde etkili birer yol arkadaşı olmalarını destekliyor; desteği güçlendiren ve gereksiz performans baskısını azaltan pratik rehberlik sunuyoruz.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Profesyonel Spora Geçiş',
+        description:
+          'Sporcuların altyapıdan profesyonel futbola geçerken kariyerlerinin en zorlu dönemlerinden birini; yapılandırılmış psikolojik hazırlık, uyum çalışmaları ve sürekli destekle daha sağlıklı yönetmelerine yardımcı oluyoruz.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Sakatlık Psikolojisi ve Rehabilitasyon',
+        description:
+          'Psikolojik desteği sakatlıkların önlenmesi ve rehabilitasyon süreçlerine entegre ederek sporcuların stresle başa çıkmalarına, motivasyonlarını korumalarına, takıma aidiyetlerini sürdürmelerine ve sahaya güvenle dönmelerine yardımcı oluyoruz.',
+        icon: 'tabler:first-aid-kit',
+      },
+      {
+        title: 'Uluslararası Sporcuların Uyum Süreci',
+        description:
+          'Yurt dışından transfer edilen sporcuların yeni bir kültüre, yaşam düzenine ve performans beklentilerine uyum sağlamalarını destekliyoruz. Böylece uyum sürecinde yaşanan güçlüklerin sporcunun performansını ve potansiyelini gölgelemesini önleyerek kulüplerin daha sağlıklı ve gerçekçi bir değerlendirme yapmasına katkı sunuyoruz.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Kadro Dışı Kalma ve Geçiş Süreci',
+        description:
+          'Sporcuları kadrodan ayrılma sürecinin öncesinde, sırasında ve sonrasında destekliyor; kimlik gelişimi, kariyer planlaması, eğitimin sürekliliği ve yapılandırılmış geçiş programları aracılığıyla futbol dışındaki yaşama hazırlıyoruz.',
+        icon: 'tabler:door-exit',
+      },
+      {
+        title: 'Koruma ve Güvenlik',
+        description:
+          'Genç sporcularla çalışmak, psikoloji alanındaki uzmanlığın ötesinde güçlü koruma sistemleri gerektirir. Çocuk koruma, çocuk güvenliği ve ruh sağlığı programlarında yaklaşık on yıllık deneyimimizle; koruma mekanizmalarını, yönlendirme süreçlerini, gizlilik ilkelerini ve etik veri yönetimini en başından itibaren tüm programlarımıza entegre ediyoruz.',
+        icon: 'tabler:shield-lock',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Sahada antrenman yapan genç bir futbolcu',
+    }}
+  />
+
+  <!-- Content Widget **************** İlkelerimiz ****** -->
+
+  <Content
+    isAfterContent
+    title="İlkelerimiz"
+    items={[
+      { description: 'Koçluk kararlarına veya taktiksel süreçlere müdahale etmeyiz.' },
+      { description: 'Psikolojik destek, seçim ve performans değerlendirmesinden bağımsız kalır.' },
+      { description: 'Her müdahale, kulübün ve sporcularının ihtiyaçlarına göre uyarlanır.' },
+      { description: 'Tek seferlik atölyeler yerine uzun vadeli sistem gelişimine öncelik veririz.' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Yönetişim ve koruma uygulamalarını tartışan bir ekip',
+    }}
+  >
+    <Fragment slot="content">
+      <p>Çalışmalarımız, üzerinde taviz vermediğimiz bir dizi ilkeye dayanır:</p>
+    </Fragment>
+  </Content>
+
+  <!-- BarChart Widget *************** Spor: gelisimin degeri ****** -->
+
+  <BarChart
+    id="oyuncu-gelisim-degeri"
+    title="Oyuncu gelişimi geleceğe dönük finansal değer yaratır"
+    subtitle="Mevcut FIFA dayanışma mekanizması: uygun transfer bedelinin %5'i"
+    axisLabel="Toplam dayanışma havuzu (milyon €)"
+    xAxisLabel="Örnek uygun transfer bedeli"
+    color="accent"
+    max={2.5}
+    ticks={[
+      { value: 0, label: '0' },
+      { value: 0.5, label: '0,5' },
+      { value: 1, label: '1,0' },
+      { value: 1.5, label: '1,5' },
+      { value: 2, label: '2,0' },
+      { value: 2.5, label: '2,5' },
+    ]}
+    bars={[
+      { label: '5 mn €', value: 0.25, display: '250 bin €' },
+      { label: '10 mn €', value: 0.5, display: '500 bin €' },
+      { label: '20 mn €', value: 1, display: '1 mn €' },
+      { label: '50 mn €', value: 2.5, display: '2,5 mn €' },
+    ]}
+    source="%5'lik pay, uygun tüm yetiştirme kulüpleri arasında paylaştırılır; her kulüp kendisine düşen payı alır. Kaynak: FIFA RSTP / Clearing House."
+    summary="Bir oyuncuyu yetiştirmek yalnızca sportif bir yatırım değildir. Oyuncu ilerleyen dönemde bir bedelle transfer olduğunda, FIFA'nın dayanışma mekanizması bu bedelin %5'ini onu yetiştiren kulüplere geri kazandırır: 10 milyon avroluk bir transfer 500 bin avroluk, 50 milyon avroluk bir transfer ise 2,5 milyon avroluk bir havuz oluşturur. Genç sporcuların gelişimini sürdüren ve bu gelişimi usulüne uygun biçimde belgeleyen kulüpler, bu değerden yararlanabilecek konumdadır."
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'İhtiyacınızı konuşalım',
+        href: getPermalink('/tr/contact'),
+      },
+    ]}
+    title="Nereden başlayacağınızdan emin değil misiniz?"
+    subtitle="Birlikte çalıştığınız kişiler veya kurum hakkında bize bilgi verin, doğru çalışma kapsamını belirlemenize yardımcı olalım."
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

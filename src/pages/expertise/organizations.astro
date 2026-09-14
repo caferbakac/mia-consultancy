@@ -1,0 +1,128 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import BarChart from '~/components/widgets/BarChart.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Organizations',
+  description:
+    'Helping organisations attract, integrate, and retain the next generation of professionals through evidence-based onboarding, leadership development, wellbeing, and organisational culture.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Core Competencies"
+    title="Organizations"
+    subtitle="Helping organisations attract, integrate, and retain the next generation of professionals through evidence-based onboarding, leadership development, wellbeing, and organisational culture."
+  />
+
+  <!-- Content Widget **************** Organizations: Problem ****** -->
+
+  <Content
+    isReversed
+    title="Integration and the New Generation"
+    image={{
+      src: 'https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Diverse team meeting in an office',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Organisations often invest heavily in recruitment but lose talented people within the first years. The cost is
+        not only financial; it appears in lost knowledge, reduced trust and the assumption that "this generation does
+        not want to work."
+      </p>
+      <p class="mb-4">
+        The reality is usually different. The challenge is often a gap between what organisations provide and what
+        people need to sustain motivation: autonomy, meaningful development and belonging.
+      </p>
+      <p>
+        The same applies to culturally diverse workplaces. Employees who are new to a country or organisational culture
+        may struggle with unwritten rules around communication, relationships and expectations. When these differences
+        are misunderstood, capable people can be unfairly perceived as disengaged or difficult.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** Organizations: What we work on / don't do ****** -->
+
+  <Content
+    isAfterContent
+    title="What We Work On"
+    items={[
+      {
+        title: 'Intergenerational communication',
+        description:
+          'Supporting organisations to move beyond narratives such as "young people do not want to work," building two-way understanding between experienced employees and new-generation professionals, and helping teams recognise different expectations around communication, flexibility, purpose and career development.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Cross-cultural and migrant workforce integration',
+        description:
+          'Supporting organisations working with international and culturally diverse teams, exploring how workplace assumptions influence participation, evaluation and belonging, and helping both newcomers and receiving teams develop more inclusive practices.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Psychological safety and retention',
+        description:
+          'Identifying early signs of disengagement before employees leave, understanding how workplace culture, leadership and belonging influence retention, and supporting organisations to build healthier and more sustainable team environments.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: "What We Don't Do",
+        description:
+          'We are not an HR consultancy and do not provide employee engagement software or workplace therapy. Our role is to help organisations understand and strengthen the human processes behind integration, belonging and retention. Where clinical support is required, we help organisations establish appropriate referral pathways.',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Team collaborating around a table',
+    }}
+  />
+
+  <!-- BarChart Widget *************** Organizations: cost of losing talent ****** -->
+
+  <BarChart
+    id="talent-replacement-cost"
+    title="Losing talent has a measurable cost"
+    subtitle="Estimated replacement cost by role"
+    axisLabel="Estimated replacement cost (% of annual salary)"
+    color="primary"
+    max={200}
+    ticks={[
+      { value: 0, label: '0' },
+      { value: 50, label: '50' },
+      { value: 100, label: '100' },
+      { value: 150, label: '150' },
+      { value: 200, label: '200' },
+    ]}
+    bars={[
+      { label: 'Frontline employee', value: 40, display: '40%' },
+      { label: 'Technical professional', value: 80, display: '80%' },
+      { label: 'Leader / manager', value: 200, display: '200%' },
+    ]}
+    source="Source: Gallup. Estimates exclude unmeasured losses in morale and knowledge."
+    summary="Replacing someone costs far more than most organisations account for: roughly 40% of annual salary for a frontline employee, 80% for a technical professional and up to 200% for a leader. Losing one young talent can therefore cost two full salaries, before counting the disruption to teams and the knowledge that leaves with them. Retention is not a soft concern; it is a budget line."
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuss your challenge',
+        href: getPermalink('/contact'),
+      },
+    ]}
+    title="Not sure where to start?"
+    subtitle="Tell us about the people or organisation you're working with, and we'll help you scope the right engagement."
+  />
+</Layout>

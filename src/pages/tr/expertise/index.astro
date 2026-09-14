@@ -1,0 +1,75 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { headerData, footerData } from '~/navigation.tr';
+import { getPermalink } from '~/utils/permalinks';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Temel Yetkinlikler',
+};
+---
+
+<Layout metadata={metadata} lang="tr">
+  <Header slot="header" {...headerData} isSticky showToggleTheme />
+
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Temel Yetkinlikler"
+    title="Temel Yetkinlikler"
+    subtitle="İki alan, tek disiplin: İnsanları, hayatlarını değiştiren anlar üzerinden anlamak."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    columns={2}
+    items={[
+      {
+        title: 'Elit Spor',
+        description:
+          'Sporcuları, akademileri, koçları ve aileleri; gelişim, performans, sakatlık ve profesyonel spora geçiş süreçlerinin psikolojik gereksinimleri konusunda destekliyoruz.',
+        icon: 'tabler:ball-football',
+        callToAction: {
+          variant: 'link',
+          text: 'Elit Spor’u keşfedin',
+          href: getPermalink('/tr/expertise/elite-sport'),
+          icon: 'tabler:arrow-right',
+        },
+      },
+      {
+        title: 'Kurumlar',
+        description:
+          'Kurumların yeni nesil yetenekleri bünyesine çekmesine, hızla adapte etmesine ve uzun vadeli bağlılık oluşturmasına yardımcı oluyoruz. Bunu; kanıta dayalı işe alım, liderlik gelişimi, çalışan esenliği/iyi oluşu ve güçlü bir kurum kültürüyle başarıyoruz.',
+        icon: 'tabler:building',
+        callToAction: {
+          variant: 'link',
+          text: 'Kurumlar alanını keşfedin',
+          href: getPermalink('/tr/expertise/organizations'),
+          icon: 'tabler:arrow-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'İhtiyacınızı konuşalım',
+        href: getPermalink('/tr/contact'),
+      },
+    ]}
+    title="Nereden başlayacağınızdan emin değil misiniz?"
+    subtitle="Birlikte çalıştığınız kişiler veya kurum hakkında bize bilgi verin, doğru çalışma kapsamını belirlemenize yardımcı olalım."
+  />
+
+  <Footer slot="footer" {...footerData} />
+</Layout>

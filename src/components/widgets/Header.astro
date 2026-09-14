@@ -121,7 +121,10 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
                   <>
                     <button
                       type="button"
-                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      class:list={[
+                        'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                        { 'aw-link-active': links.some(({ href: childHref }) => childHref === currentPath) },
+                      ]}
                     >
                       {text}{' '}
                       <Icon
@@ -257,8 +260,11 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
         lastChild?.classList.toggle('hidden');
       });
 
-      // Close the mobile menu when a nav link is clicked.
-      nav?.addEventListener('click', closeMenu);
+      // Close the mobile menu when a nav link is followed. Clicks on a
+      // dropdown's parent label (a button, not a link) must leave it open.
+      nav?.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement)?.closest('a')) closeMenu();
+      });
 
       // Desktop dropdowns open on hover/`:focus-within`. When a dropdown link is
       // clicked it keeps focus, and because the header uses `transition:persist`
@@ -315,6 +321,10 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
       const current = norm(window.location.pathname);
       this.querySelectorAll<HTMLAnchorElement>('nav a[href]').forEach((a) => {
         a.classList.toggle('aw-link-active', norm(new URL(a.href).pathname) === current);
+      });
+      this.querySelectorAll<HTMLElement>('nav .dropdown').forEach((dropdown) => {
+        const childActive = dropdown.querySelector('.dropdown-menu a.aw-link-active') !== null;
+        dropdown.querySelector('button')?.classList.toggle('aw-link-active', childActive);
       });
     }
 

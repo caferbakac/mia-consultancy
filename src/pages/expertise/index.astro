@@ -1,0 +1,67 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Core Competencies',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="Core Competencies"
+    title="Core Competencies"
+    subtitle="Two areas, one discipline: understanding people through the moments that change them."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    columns={2}
+    items={[
+      {
+        title: 'Elite Sport',
+        description:
+          'Supporting athletes, academies, coaches, and families through the psychological demands of development, performance, injury, and the transition to professional sport.',
+        icon: 'tabler:ball-football',
+        callToAction: {
+          variant: 'link',
+          text: 'Explore Elite Sport',
+          href: getPermalink('/expertise/elite-sport'),
+          icon: 'tabler:arrow-right',
+        },
+      },
+      {
+        title: 'Organisations',
+        description:
+          'Helping organisations attract, integrate, and retain the next generation of professionals through evidence-based onboarding, leadership development, wellbeing, and organisational culture.',
+        icon: 'tabler:building',
+        callToAction: {
+          variant: 'link',
+          text: 'Explore Organizations',
+          href: getPermalink('/expertise/organizations'),
+          icon: 'tabler:arrow-right',
+        },
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Discuss your challenge',
+        href: getPermalink('/contact'),
+      },
+    ]}
+    title="Not sure where to start?"
+    subtitle="Tell us about the people or organisation you're working with, and we'll help you scope the right engagement."
+  />
+</Layout>

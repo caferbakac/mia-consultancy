@@ -4,7 +4,13 @@ export const headerData = {
   links: [
     { text: 'Home', href: getPermalink('/') },
     { text: 'Our Story', href: getPermalink('/our-story') },
-    { text: 'Core Competencies', href: getPermalink('/expertise') },
+    {
+      text: 'Core Competencies',
+      links: [
+        { text: 'Elite Sport', href: getPermalink('/expertise/elite-sport') },
+        { text: 'Organizations', href: getPermalink('/expertise/organizations') },
+      ],
+    },
     { text: 'How We Work', href: getPermalink('/how-we-work') },
     { text: 'Team', href: getPermalink('/team') },
     { text: 'FAQs', href: getPermalink('/faqs') },
