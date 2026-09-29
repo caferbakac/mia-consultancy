@@ -1,6 +1,7 @@
 ---
-// Font family is provided by Astro's native Fonts API (see `fonts` in
-// astro.config.ts and <Font /> in Layout.astro), exposed as `--font-inter`.
+// Font families come from Astro's native Fonts API (see `fonts` in
+// astro.config.ts and <Font /> in Layout.astro): Inter for body text, and
+// Newsreader, the serif of the "mia" wordmark, for display headings.
 // To switch typefaces, change the `fonts` entry and repoint `--aw-font-*` below.
 
 // 'DM Sans'
@@ -25,17 +26,23 @@
   :root {
     --aw-font-sans: var(--font-inter);
     --aw-font-serif: var(--font-inter);
-    --aw-font-heading: var(--font-inter);
+    --aw-font-heading: var(--font-newsreader);
 
-    /* Brand colors sampled from the Mia Consultancy logo */
-    --aw-color-primary: rgb(79 138 198); /* blue dot */
-    --aw-color-secondary: rgb(81 153 98); /* green dot */
-    --aw-color-accent: rgb(190 110 82); /* terracotta dot */
+    /*
+     * Brand colours, from the three logo dots, deepened to about 5:1 against the
+     * page so they pass WCAG AA as text and behind white button labels. Same
+     * hues as the logo; the dots themselves (logo SVGs) keep their originals:
+     * blue rgb(79 138 198), green rgb(81 153 98), terracotta rgb(190 110 82),
+     * which measured 3.3 to 3.6:1 here.
+     */
+    --aw-color-primary: rgb(59 111 166); /* blue dot */
+    --aw-color-secondary: rgb(55 120 72); /* green dot */
+    --aw-color-accent: rgb(166 86 60); /* terracotta dot */
 
     --aw-color-text-heading: rgb(33 31 28); /* wordmark ink */
     --aw-color-text-default: rgb(33 31 28);
     --aw-color-text-muted: rgb(33 31 28 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-bg-page: rgb(250 249 247); /* warm paper, as on the share card */
 
     --aw-color-bg-page-dark: rgb(23 20 18);
 
@@ -47,7 +54,7 @@
   .dark {
     --aw-font-sans: var(--font-inter);
     --aw-font-serif: var(--font-inter);
-    --aw-font-heading: var(--font-inter);
+    --aw-font-heading: var(--font-newsreader);
 
     --aw-color-primary: rgb(123 167 212);
     --aw-color-secondary: rgb(116 173 129);

@@ -46,6 +46,17 @@ export default defineConfig({
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['sans-serif'],
     },
+    {
+      // The serif of the "mia" wordmark, used for display headings so the
+      // page type speaks the same voice as the logo.
+      provider: fontProviders.fontsource(),
+      name: 'Newsreader',
+      cssVariable: '--font-newsreader',
+      weights: ['200 800'],
+      styles: ['normal'],
+      subsets: ['latin', 'latin-ext'],
+      fallbacks: ['Georgia', 'serif'],
+    },
   ],
 
   integrations: [

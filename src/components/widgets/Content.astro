@@ -46,7 +46,7 @@ const columnsClass =
     tagline={tagline}
     classes={{
       container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
+      title: 'text-4xl md:text-5xl leading-[1.1] mb-4 font-heading',
       subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
     }}
   />
@@ -72,7 +72,7 @@ const columnsClass =
                     <div class="flex justify-center">
                       <Icon
                         name={icon || 'tabler:check'}
-                        class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1 mr-2 rtl:mr-0 rtl:ml-2"
+                        class="flex h-7 w-7 items-center justify-center rounded-full bg-secondary text-white dark:text-[rgb(23_20_18)] p-1 mr-2 rtl:mr-0 rtl:ml-2"
                       />
                     </div>
                     <div class="mt-0.5">
@@ -113,7 +113,7 @@ const columnsClass =
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+                  class="mx-auto w-full rounded-2xl bg-gray-200 shadow-[0_1px_2px_rgb(60_48_36/0.04),0_12px_32px_-16px_rgb(60_48_36/0.16)]"
                   width={500}
                   height={500}
                   widths={[400, 768]}

@@ -40,7 +40,7 @@ const formId = `aw-form-${Math.random().toString(36).slice(2, 9)}`;
                 autocomplete={autocomplete}
                 placeholder={placeholder}
                 required={required}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                class="py-3 px-4 block w-full text-md rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-950 transition focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
               />
             </div>
           )
@@ -59,7 +59,7 @@ const formId = `aw-form-${Math.random().toString(36).slice(2, 9)}`;
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
           required={textarea.required || false}
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          class="py-3 px-4 block w-full text-md rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-950 transition focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
         />
       </div>
     )
@@ -74,7 +74,7 @@ const formId = `aw-form-${Math.random().toString(36).slice(2, 9)}`;
             name="disclaimer"
             type="checkbox"
             required
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-950 transition focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/15"
           />
         </div>
         <div class="ml-3">

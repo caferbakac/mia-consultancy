@@ -70,11 +70,7 @@ const description = `${title}. ${bars.map(({ label, display }) => `${label}: ${d
   <figure class="m-0" style={`--tone: ${tone};`}>
     <!-- Headline -->
     <div class="mb-8 text-center md:mb-10">
-      {
-        tagline && (
-          <p class="mb-2 text-base font-bold uppercase tracking-wide text-secondary dark:text-blue-200">{tagline}</p>
-        )
-      }
+      {tagline && <p class="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-secondary">{tagline}</p>}
       <h2 class="font-bold font-heading leading-tighter tracking-tighter text-heading text-2xl md:text-3xl lg:text-4xl">
         {title}
       </h2>
