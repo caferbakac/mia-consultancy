@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
+import LanguageSwitch from '~/components/common/LanguageSwitch.astro';
 import Button from '~/components/ui/Button.astro';
 
 import { getHomePermalink, getPermalink } from '~/utils/permalinks';
@@ -64,7 +65,7 @@ const targetRelPath = isTrPage
     ? '/tr'
     : `/tr${relPath}`;
 const langTogglePath = getPermalink(targetRelPath);
-const langToggleLabel = isTrPage ? 'EN' : 'TR';
+const langTarget = isTrPage ? 'en' : 'tr';
 ---
 
 <aw-header transition:persist={isTrPage ? 'header-tr' : 'header-en'}>
@@ -79,12 +80,12 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
     <div class="absolute inset-0"></div>
     <div
       class:list={[
-        'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+        'relative text-default py-3 px-3 xl:px-6 mx-auto w-full',
         {
-          'md:flex md:justify-between': position !== 'center',
+          'xl:flex xl:justify-between': position !== 'center',
         },
         {
-          'md:grid md:grid-cols-3 md:items-center': position === 'center',
+          'xl:grid xl:grid-cols-[1fr_auto_1fr] xl:items-center': position === 'center',
         },
         {
           'max-w-7xl': !isFullWidth,
@@ -92,15 +93,16 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
       ]}
     >
       <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-        <a class="flex items-center" href={getHomePermalink()}>
+        <a class="flex items-center" href={isTrPage ? getPermalink('/tr') : getHomePermalink()}>
           <Logo />
         </a>
-        <div class="flex items-center md:hidden">
+        <div class="flex items-center gap-1.5 sm:gap-2 xl:hidden">
+          <LanguageSwitch href={langTogglePath} target={langTarget} compact class="gap-1 px-2 sm:gap-1.5 sm:px-3" />
           {
             actions?.length ? (
               <Button
                 {...actions[0]}
-                class="mr-2 w-auto px-4 py-2 text-sm font-semibold shadow-none whitespace-nowrap"
+                class="w-auto px-3.5 py-2 text-sm font-semibold shadow-none whitespace-nowrap sm:px-4"
               />
             ) : null
           }
@@ -108,11 +110,11 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
         </div>
       </div>
       <nav
-        class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-visible md:justify-self-center"
+        class="items-center w-full xl:w-auto hidden xl:flex xl:mx-5 text-default overflow-y-auto overflow-x-hidden xl:overflow-visible xl:justify-self-center"
         aria-label="Main navigation"
       >
         <ul
-          class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
+          class="flex flex-col xl:flex-row xl:self-center w-full xl:w-auto text-xl xl:text-[0.9375rem] tracking-[0.01rem] font-medium xl:justify-center"
         >
           {
             links.map(({ text, href, links }) => (
@@ -129,15 +131,15 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
                       {text}{' '}
                       <Icon
                         name="tabler:chevron-down"
-                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden xl:inline"
                       />
                     </button>
-                    <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
+                    <ul class="dropdown-menu xl:backdrop-blur-md dark:xl:bg-dark rounded xl:absolute pl-4 xl:pl-0 xl:hidden font-medium xl:bg-white/90 xl:min-w-[200px] drop-shadow-xl">
                       {links.map(({ text: text2, href: href2 }) => (
                         <li>
                           <a
                             class:list={[
-                              'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
+                              'first:rounded-t last:rounded-b xl:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
                               { 'aw-link-active': href2 === currentPath },
                             ]}
                             href={href2}
@@ -167,20 +169,13 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
       <div
         class:list={[
           { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-          'hidden md:self-center md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] md:p-0 md:justify-self-end',
+          'hidden xl:self-center xl:flex items-center xl:mb-0 fixed w-full xl:w-auto xl:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] xl:p-0 xl:justify-self-end',
         ]}
       >
-        <div class="items-center flex justify-between w-full md:w-auto">
+        <div class="items-center flex justify-between w-full xl:w-auto">
           <div class="flex items-center">
-            <a
-              data-aw-lang-toggle
-              href={langTogglePath}
-              class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm font-semibold px-2.5 py-2.5 inline-flex items-center"
-              aria-label="Switch language"
-            >
-              {langToggleLabel}
-            </a>
-            {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
+            <LanguageSwitch href={langTogglePath} target={langTarget} class="mr-1 hidden xl:inline-flex" />
+            {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 xl:w-5 xl:h-5 xl:inline-block" />}
             {
               showRssFeed && (
                 <a
@@ -195,9 +190,12 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
           </div>
           {
             actions?.length ? (
-              <span class="ml-4 hidden rtl:ml-0 rtl:mr-4 md:inline-block">
+              <span class="ml-4 hidden rtl:ml-0 rtl:mr-4 xl:inline-block">
                 {actions.map((btnProps) => (
-                  <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                  <Button
+                    {...btnProps}
+                    class="ml-2 py-2.5 px-5.5 xl:px-6 font-semibold shadow-none text-sm w-auto whitespace-nowrap"
+                  />
                 ))}
               </span>
             ) : (
@@ -277,7 +275,7 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
       });
 
       // Close it when leaving the mobile breakpoint.
-      this.mql = window.matchMedia('(max-width: 767px)');
+      this.mql = window.matchMedia('(max-width: 1279px)');
       this.onMqlChange = () => closeMenu();
       this.mql.addEventListener('change', this.onMqlChange);
 
@@ -332,8 +330,8 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
     // server-rendered language-toggle target/label would go stale when moving
     // between pages within the same language. Recompute from the live URL.
     private updateLangToggle() {
-      const el = this.querySelector<HTMLAnchorElement>('[data-aw-lang-toggle]');
-      if (!el) return;
+      const switches = this.querySelectorAll<HTMLAnchorElement>('[data-aw-lang-toggle]');
+      if (!switches.length) return;
 
       // Vite replaces `import.meta.env.BASE_URL` at build time with the
       // configured `base` (currently `/`; a subpath would arrive as `/sub/`).
@@ -344,16 +342,28 @@ const langToggleLabel = isTrPage ? 'EN' : 'TR';
       }
 
       const isTr = path === '/tr' || path.startsWith('/tr/');
+      const target = isTr ? 'en' : 'tr';
+      const name = isTr ? 'English' : 'Türkçe';
       let targetPath: string;
       if (isTr) {
         const rest = path.slice(3);
         targetPath = rest === '' ? '/' : rest;
-        el.textContent = 'EN';
       } else {
         targetPath = path === '/' ? '/tr' : `/tr${path}`;
-        el.textContent = 'TR';
       }
-      el.href = targetPath === '/' ? base || '/' : base + targetPath;
+      const href = targetPath === '/' ? base || '/' : base + targetPath;
+
+      switches.forEach((el) => {
+        el.href = href;
+        el.hreflang = target;
+        el.lang = target;
+        el.setAttribute('aria-label', name);
+        el.title = name;
+        const nameEl = el.querySelector('[data-lang-name]');
+        if (nameEl) nameEl.textContent = name;
+        const codeEl = el.querySelector('[data-lang-code]');
+        if (codeEl) codeEl.textContent = target.toUpperCase();
+      });
     }
   }
 

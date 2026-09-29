@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+
+export interface Props {
+  /** The same page in the other language. */
+  href: string;
+  /** The language this link switches to. */
+  target: 'en' | 'tr';
+  /** Globe only below 350px, the language code up to `sm`, the full name from `sm` up. */
+  compact?: boolean;
+  class?: string;
+}
+
+const { href, target, compact = false, class: className = '' } = Astro.props;
+
+// Each language is named in itself, so a visitor scanning for their own
+// language recognises it whichever version of the page they landed on.
+const names = { en: 'English', tr: 'Türkçe' } as const;
+---
+
+<a
+  data-aw-lang-toggle
+  href={href}
+  hreflang={target}
+  lang={target}
+  aria-label={names[target]}
+  title={names[target]}
+  class={twMerge(
+    'inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-primary/40 bg-primary/[0.07] px-3 py-1.5 text-sm font-semibold text-heading transition hover:border-primary/60 hover:bg-primary/[0.14] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:border-primary/45 dark:bg-primary/15 dark:hover:bg-primary/25',
+    className
+  )}
+>
+  <Icon name="tabler:world" class="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+  <span data-lang-name class={compact ? 'hidden sm:inline' : undefined}>{names[target]}</span>
+  {
+    compact && (
+      <span data-lang-code class="hidden min-[350px]:inline sm:hidden">
+        {target.toUpperCase()}
+      </span>
+    )
+  }
+</a>
